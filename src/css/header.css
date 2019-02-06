@@ -31,23 +31,3 @@
         text-decoration: none;
         padding-left: 35px;
         color: red; }
-
-* {
-  margin: 0;
-  padding: 0; }
-
-body {
-  background-color: red; }
-
-.title1 {
-  min-width: 100px;
-  margin: 0 auto; }
-  .title1 .title1__item {
-    width: 145px;
-    color: #222222;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 62.69px;
-    letter-spacing: 0.23px;
-    margin: 83px auto 0px; }

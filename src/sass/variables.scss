@@ -1,0 +1,13 @@
+// color
+$backgroundColorMain: #ecedee;
+$backgroundColorLocal: #cdcdcd;
+$blackColor: black;
+// fonts
+$fontLogo: "Titillium Web - Semi Bold";
+$fontMenu: 'Titillium Web', sans-serif;
+// mixCode
+@mixin minMaxWidth {
+    min-width: 400px;
+    max-width: 1280px;
+}
+

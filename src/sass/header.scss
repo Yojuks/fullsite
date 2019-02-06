@@ -1,0 +1,54 @@
+@import 'variables';
+
+.header-main {
+    @include minMaxWidth;
+    margin: 0 auto;
+    background: $backgroundColorLocal;
+    height: 768px;
+
+    .header-main__wrapper {
+        @include minMaxWidth;
+        .wrapper-logo { 
+            display: block;
+            float: left; 
+            width: 95px;
+            padding-left: 49px;
+            padding-top: 29px;
+        }    
+        .wrapper-logo__paragraph {
+            width: 95px;
+            color: #222222;
+            font-family: "Titillium Web - Semi Bold";
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 34.87px;
+            text-transform: uppercase;
+            letter-spacing: 1.98px;
+        }
+    }
+}
+.wrapper__menu {
+    display: block;
+    float: right;
+    width: calc(100% - 95px - 49px);
+    .wrapper__item {
+        display: block;
+        float: right;
+        padding-top: 35px;
+        padding-right: 39px;
+        .wrapper__list {
+            display: inline-block;
+            list-style: none;
+            padding-left: 35px;
+            .link{
+                text-decoration: none;
+                color: $blackColor;
+                font-size: 16px;
+            }
+        }
+    }
+}
+.topmenu::after {
+    content: "";
+    clear: both;
+}

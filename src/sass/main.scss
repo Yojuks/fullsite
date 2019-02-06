@@ -1,14 +1,18 @@
+@import 'variables';
+@import 'header';
+
 * {
     margin: 0;
     padding: 0;
 }
 body {
-    background-color: #ecedee;
+    background-color: $backgroundColorMain;
 }
-.title1 {
-    width: 1280px;
+.title-block { 
     margin: 0 auto;
-    .title1__item {
+    margin-top: 83px;
+    @include minMaxWidth;
+    .title {
         width: 145px;
         color: #222222;
         font-family: 'Titillium Web', sans-serif;
@@ -16,48 +20,6 @@ body {
         font-weight: 700;
         line-height: 62.69px;
         letter-spacing: 0.23px;
-        margin: 83px auto 0px;
-    }
-}
-
-.header1 {
-    min-width: 400px;
-    max-width: 1280px;
-    margin: 0 auto;
-
-    .topmenu {
-        width: 1280px;
-        .topmenu__logo { 
-            display: block;
-            float: left; 
-        }    
-        .topmenu__logo__paragraph {
-            width: 95px;
-            color: #222222;
-            font-family: "Titillium Web - Semi Bold";
-            font-size: 32px;
-            font-weight: 400;
-            line-height: 34.87px;
-            text-transform: uppercase;
-            letter-spacing: 1.98px;
-        }
-        .topmenu__menu {
-            display: block;
-            float: right;
-            width: calc(100% - 95px);
-            .topmenu__menu__item {
-                display: block;
-                float: right;
-                .topmenu__menu__item__list {
-                    display: inline-block;
-                    list-style: none;
-                    .topmenu__menu__item__link {
-                        text-decoration: none;
-                        padding-left: 35px;
-                        color: black;
-                    }
-                }
-            }
-        }
+        margin: 0 auto;
     }
 }

@@ -20,7 +20,7 @@ var gulp = require('gulp'),
     gulp.task('sass', function(){ // Создаем таск Sass
         return gulp.src('src/sass/**/*.scss') // Берем источник
         .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
-        .pipe(gulp.dest('src/css')) // Выгружаем результата в папку app/css
+        .pipe(gulp.dest('build/css')) // Выгружаем результата в папку app/css
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
     });
     
@@ -43,18 +43,18 @@ var gulp = require('gulp'),
         .pipe(gulp.dest('build/js')); // Выгружаем в папку /js
     });
     
-gulp.task('css-libs', ['sass'], function() {
-    return gulp.src('build/css/libs.css') // Выбираем файл для минификации
-    .pipe(cssnano()) // Сжимаем
-    .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
-    .pipe(gulp.dest('src/css')); // Выгружаем в папку app/css
-});
+    gulp.task('css-libs', ['sass'], function() {
+        return gulp.src('build/css/libs.css') // Выбираем файл для минификации
+        .pipe(cssnano()) // Сжимаем
+        .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
+        .pipe(gulp.dest('src/css')); // Выгружаем в папку app/css
+    });
 
-gulp.task('watch', function() {
-    gulp.watch('src/sass/**/*.sass', ['sass']); // Наблюдение за sass файлами
-    gulp.watch('src/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch('src/js/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
-});
+    gulp.task('watch', function() {
+        gulp.watch('src/sass/**/*.sass', ['sass']); // Наблюдение за sass файлами
+        gulp.watch('src/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
+        gulp.watch('src/js/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
+    });
 // var gulp = require('gulp');
 
 // gulp.task('mytask', function() {
