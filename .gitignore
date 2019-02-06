@@ -47,3 +47,9 @@ build/config/buildinfo.properties
 
 # MAC OS file
 .DS_Store
+
+# local build
+build
+
+# local node/modules
+node_modules

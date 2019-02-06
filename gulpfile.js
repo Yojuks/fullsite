@@ -18,9 +18,9 @@ var gulp = require('gulp'),
     // rimraf = require('rimraf'),
 
     gulp.task('sass', function(){ // Создаем таск Sass
-        return gulp.src('src/sass/**/*.sass') // Берем источник
+        return gulp.src('src/sass/**/*.scss') // Берем источник
         .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
-        .pipe(gulp.dest('build/css')) // Выгружаем результата в папку app/css
+        .pipe(gulp.dest('src/css')) // Выгружаем результата в папку app/css
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
     });
     
