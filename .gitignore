@@ -44,3 +44,6 @@ publish
 build/buildinfo.properties
 build/config/buildinfo.properties
 /inc/.DS_Store
+
+# MAC OS file
+.DS_Store
