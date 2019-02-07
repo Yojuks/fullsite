@@ -8,6 +8,7 @@
 
     .header-main__wrapper {
         @include minMaxWidth;
+        
         .wrapper-logo { 
             display: block;
             float: left; 
@@ -26,7 +27,21 @@
             letter-spacing: 1.98px;
         }
     }
+    .header-main__wrapper:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    // .clearfix:after {
+    //     visibility: hidden;
+    //     display: block;
+    //     content: "";
+    //     clear: both;
+    //     height: 0;
+    // }
+    
 }
+
 .wrapper__menu {
     display: block;
     float: right;
@@ -48,8 +63,14 @@
         }
     }
 }
-.topmenu::after {
-    content: "";
-    clear: both;
+.slider {
+    text-align: center;
 }
 
+.slider-item__hidden {
+    visibility: hidden;
+}
+
+.slider-item__active {
+    visibility: visible;
+}
