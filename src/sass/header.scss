@@ -67,10 +67,10 @@
     text-align: center;
 }
 
-.slider-item__hidden {
-    visibility: hidden;
+.slider-item {
+    display: none
 }
 
 .slider-item__active {
-    visibility: visible;
+    display: block;
 }
