@@ -8,16 +8,13 @@
 
     .header-main__wrapper {
         @include minMaxWidth;
-        
+        padding: 35px;
         .wrapper-logo { 
             display: block;
             float: left; 
-            width: 95px;
-            padding-left: 49px;
-            padding-top: 29px;
+            width: 10%;
         }    
         .wrapper-logo__paragraph {
-            width: 95px;
             color: #222222;
             font-family: "Titillium Web - Semi Bold";
             font-size: 32px;
@@ -45,12 +42,10 @@
 .wrapper__menu {
     display: block;
     float: right;
-    width: calc(100% - 95px - 49px);
+    width: calc(100% - 10% - 2.734375%);
     .wrapper__item {
         display: block;
         float: right;
-        padding-top: 35px;
-        padding-right: 39px;
         .wrapper__list {
             display: inline-block;
             list-style: none;
@@ -68,9 +63,75 @@
 }
 
 .slider-item {
-    display: none
+    display: none;
+    .slider-item__active  {
+    display: block;
+    }
 }
 
-.slider-item__active {
+.slider-item__active  {
     display: block;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.slider-item__text {
+    color: #222222;
+    font-family: "Titillium Web";
+    font-size: 38px;
+    font-weight: 300;
+    letter-spacing: 0.76px;
+    
+}
+
+.slider__text {
+   display: flex;
+   align-items: center;
+   align-content: center;
+   height: 400px;
+   padding: 10px;
+}
+
+.back__link,
+.next__link {
+    text-decoration: none;
+    color: #222222;
+    font-size: 20px;
+}
+
+.slider__arrows {
+    display: flex;
+    align-items: end;
+    margin: 0 auto;
+    align-content: end;
+    height: 70px;
+}
+
+.back,
+.next {
+    width: 50%;
+}
+    
+.dots {
+    cursor: pointer;
+}
+.slider__list {
+    border: 1px solid #777777;
+    border-radius: 50% ;
+    width: 15px;
+    height: 15px;
+   
+}
+.slider__item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    align-content: center;
+    margin-left: 48%;
+    margin-right: 45%;
+}
+
+.slider__list-active {
+    background: black;
 }
