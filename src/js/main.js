@@ -61,20 +61,29 @@ var kid = document.getElementsByClassName('slider-item');
     backLink.addEventListener('click', goPrev);
     nextLink.addEventListener('click', goNext);
     
+    var selectedLi;
+
     var allDot = document.getElementsByTagName('ul')[1];
     var index = 1;
     var callback = function(index) {
       return function(event) {
-        if (event.target) {
-            event.target.classList.remove('slider__list-active');
-        }
-        event.target = index;
-        event.target.classList.add('slider__list-active');
+        // if (target.tagName != 'li') return;
+        var target = event.target;
         console.log(index);
         console.log("target", event.target)
         // event.target = goNext()
+        highlight(target);
     }
 }
+   
+    function highlight(node) {
+        if (selectedLi) {
+            selectedLi.classList.remove('slider__list-active');
+        }
+        selectedLi = node;
+        selectedLi.classList.add('slider__list-active');
+      }
+
     allDot.addEventListener('click', callback(index));
 
    
