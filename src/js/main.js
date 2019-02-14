@@ -62,18 +62,22 @@ var kid = document.getElementsByClassName('slider-item');
     nextLink.addEventListener('click', goNext);
     
     var allDot = document.getElementsByTagName('ul')[1];
-    var index = goNext();
+    var index = 1;
     var callback = function(index) {
       return function(event) {
-      console.log(index)
-      console.log("target", event.target)
-      event.target.classList.toggle('slider__list-active');
-      event.target = goNext();
-      }
+        if (event.target) {
+            event.target.classList.remove('slider__list-active');
+        }
+        event.target = index;
+        event.target.classList.add('slider__list-active');
+        console.log(index);
+        console.log("target", event.target)
+        // event.target = goNext()
     }
-    
+}
     allDot.addEventListener('click', callback(index));
 
+   
 
     // var myFunc = function(goNext) {goNext()}
 
