@@ -61,49 +61,74 @@ var kid = document.getElementsByClassName('slider-item');
     backLink.addEventListener('click', goPrev);
     nextLink.addEventListener('click', goNext);
     
+    var allDot = document.getElementsByTagName('ul')[1];
+    var index = goNext();
+    var callback = function(index) {
+      return function(event) {
+      console.log(index)
+      console.log("target", event.target)
+      event.target.classList.toggle('slider__list-active');
+      event.target = goNext();
+      }
+    }
+    
+    allDot.addEventListener('click', callback(index));
+
+
     // var myFunc = function(goNext) {goNext()}
 
-    var allDot = document.querySelectorAll('ul.slider__item > li');
+    // var allDot = document.querySelectorAll('ul.slider__item > li');
     
+    // console.log(allDot);
     
-   
-    for (var d=0; d<allDot.length; d++) {
-        allDot[d].addEventListener('click', checkDot(goNext, goPrev));
-    }
+    // allDot.addEventListener('click', checkDot(goNext, goPrev)); 
+
+
+    // var menu = document.getElementsByTagName('ul')[0]
+
+
+
+    // var allDot = document.getElementsByTagName('ul')[1];
+    
+    // var callback = function(event, goNext) {
+    // console.log("target", event.target);
+    // event.target.classList.toggle('slider__list-active');
+    // if (event.target.classList.toggle('slider__list-active')) {
+        
+    // }
+    // console.log(goNext());
+    
+    // }
+
+    // allDot.addEventListener('click', callback);
+    
+
 
     // function name (event) {
     //     console.log(event);
         
     // }
-
-    function checkDot(goNext, goPrev) {
-
-        var a = goNext();
+    // function checkDot(goNext, goPrev) {
+    //     var a = 5;
+    //       console.log(a);
+          
+        // var a = goNext(); 
         // function First() {
         //     if (allDot[d].classList.contains('slider__list-active')) {
         //         return allDot[d];
         //     }
         // }
-
         // var Name = First();
-
-        
-        
-        
-        
-            // var kids = document.getElementsByClassName('slider-item');
-            
-            // function ActiveDot() {
-            //     for(var j=0; j<allDot.length; j++) {
-            //         if (allDot[j].classList.contains('slider__list-active')) {
-            //             return allDot[j];
-            //         }
-            //     }
-            // }
-
-            // var currentActiveDot = ActiveDot();
-
-            
+        //     var kids = document.getElementsByClassName('slider-item');
+        //     function ActiveDot() {
+        //         for(var j=0; j<allDot.length; j++) {
+        //             if (allDot[j].classList.contains('slider__list-active')) {
+        //                 return allDot[j];
+        //             }
+        //         }
+        //     }
+        //     var currentActiveDot = ActiveDot();
+        // }
 
     //!!!!!Uncaught RangeError: Maximum call stack size exceeded
             // function Click() {
@@ -119,7 +144,7 @@ var kid = document.getElementsByClassName('slider-item');
             // }                                                          
 
 
-        }
+        
        
             
         
