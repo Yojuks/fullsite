@@ -41,24 +41,24 @@
             </div>
         </div>
         <div class="slider">
-            <div class="slider__text" id="slider">
-                <div class="slider-item slider-item__active">
+            <div class="slider__text" id="slider" data-pos="0"> 
+                <div class="slider-item slider-item__active" data-pos="0">
                     <p class="slider-item__text">Slide #1 Fusce dapibus tellus ac cursus commodo. 
                             Duis mollis est non commodo luctus, nisi erat porttitor.</p> 
                 </div>
-                <div class="slider-item">
+                <div class="slider-item" data-pos="1">
                     <p class="slider-item__text">Slide #2 Fusce dapibus tellus ac cursus commodo. 
                             Duis mollis est non commodo luctus, nisi erat porttitor.</p> 
                 </div>
-                <div class="slider-item">
+                <div class="slider-item" data-pos="2">
                     <p class="slider-item__text">Slide #3 Fusce dapibus tellus ac cursus commodo. 
                             Duis mollis est non commodo luctus, nisi erat porttitor.</p> 
                 </div>
-                <div class="slider-item">
+                <div class="slider-item" data-pos="3">
                     <p class="slider-item__text">Slide #4 Fusce dapibus tellus ac cursus commodo. 
                             Duis mollis est non commodo luctus, nisi erat porttitor.</p> 
                 </div>
-                <div class="slider-item">
+                <div class="slider-item" data-pos="4">
                     <p class="slider-item__text">Slide #5 Fusce dapibus tellus ac cursus commodo. 
                             Duis mollis est non commodo luctus, nisi erat porttitor.</p> 
                 </div>
@@ -72,26 +72,41 @@
                 </div>
             </div>
             <div class="slider__navigation">
-               <ul class="slider__item">
-                    <li class="slider__list slider__list-active">
+                <ul class="slider__item">
+                    <li class="slider__list slider__list-active" data-pos="0">
                         <a class="slider__link" href="#"></a>
                     </li>
-                    <li class="slider__list">
-                        <a class="slider__link" href="#"></a>
-                    </li>
-                    <li class="slider__list">
-                        <a class="slider__link" href="#"></a>
-                    </li>
-                    <li class="slider__list">
-                        <a class="slider__link" href="#"></a>
-                    </li>
-                    <li class="slider__list">
-                        <a class="slider__link" href="#"></a>
-                    </li>
-               </ul>
+                    <li class="slider__list" data-pos="1"><a class="slider__link" href="#"></a></li>
+                    <li class="slider__list" data-pos="2"><a class="slider__link" href="#"></a></li>
+                    <li class="slider__list" data-pos="3"><a class="slider__link" href="#"></a></li>
+                    <li class="slider__list" data-pos="4"><a class="slider__link" href="#"></a></li>
+                </ul>
             </div>
+    </div>
+            
+         
         </div>
     </div>
+
+    <div class="center">
+	
+            <div class="slider" data-pos="0">
+                <div class="slider__slides">
+                    <div class="slider__slide"></div>
+                    <div class="slider__slide"></div>
+                    <div class="slider__slide"></div>
+                    <div class="slider__slide"></div>
+                </div>
+                <div class="slider__dots">
+                    <a href="#" class="slider__indicator"></a>
+                    <a href="#" class="slider__dot" data-pos="0"></a>
+                    <a href="#" class="slider__dot" data-pos="1"></a>
+                    <a href="#" class="slider__dot" data-pos="2"></a>
+                    <a href="#" class="slider__dot" data-pos="3"></a>
+                </div>
+            </div>
+            
+        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../src/js/main.js"></script>
 </body>
