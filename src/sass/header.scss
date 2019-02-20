@@ -4,6 +4,7 @@
     @include minMaxWidth;
     margin: 0 auto;
     background: $backgroundColorLocal;
+
     height: 768px;
 
     .header-main__wrapper {
@@ -58,8 +59,13 @@
         }
     }
 }
+
 .slider {
+    // width: 1280px;
+    // height: 200px;
+    // overflow: hidden;
     text-align: center;
+    // position: relative;
 }
 
 .slider-item {
@@ -88,6 +94,7 @@
    align-content: center;
    height: 400px;
    padding: 10px;
+//    position: absolute;
 }
 
 .back__link,
@@ -135,6 +142,34 @@
 }
 
 
+.bubbles {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 5px;
+}
+
+.bubble {
+    margin: 2.5px;
+    background-color: white;
+    border-radius: 1000000px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    opacity: 0.25;
+    transition: opacity 0.2s linear;
+    cursor: pointer;
+}
+
+.bubble:hover {
+    opacity: 0.65;
+}
+.bubble .active {
+    opacity: 1;
+}
 
 
 
@@ -249,92 +284,92 @@
 
 
 
-#contentContainer {
-    width: 550px;
-    height: 350px;
-    border: 5px black solid;
-    overflow: hidden;
-}
+// #contentContainer {
+//     width: 550px;
+//     height: 350px;
+//     border: 5px black solid;
+//     overflow: hidden;
+// }
 
-#wrapper {
-    width: 2200px;
-    position: relative;
-    left: 0px;
-    transition: left .5s ease-in-out;
-}
+// #wrapper {
+//     width: 2200px;
+//     position: relative;
+//     left: 0px;
+//     transition: left .5s ease-in-out;
+// }
 
-.content {
-    float: left;
-    height: 350px;
-    white-space: normal;
-    width: 550px;
-    text-align: center;
-    padding-top: 70px;
-}
+// .content {
+//     float: left;
+//     height: 350px;
+//     white-space: normal;
+//     width: 550px;
+//     text-align: center;
+//     padding-top: 70px;
+// }
 
-    .content p {
-        font-family: Arial, sans-serif;
-        font-weight: bold;
-        opacity: .3;
-        font-size: 144px;
-        margin: 0;
-    }
+//     .content p {
+//         font-family: Arial, sans-serif;
+//         font-weight: bold;
+//         opacity: .3;
+//         font-size: 144px;
+//         margin: 0;
+//     }
 
-#itemOne {
-    background-color: #0099CC;
-    background-image: url("//www.kirupa.com/images/blueSquare.png");
-}
+// #itemOne {
+//     background-color: #0099CC;
+//     background-image: url("//www.kirupa.com/images/blueSquare.png");
+// }
 
-#itemTwo {
-    background-color: #FFCC00;
-    background-image: url("//www.kirupa.com/images/yellowSquare.png");
-}
+// #itemTwo {
+//     background-color: #FFCC00;
+//     background-image: url("//www.kirupa.com/images/yellowSquare.png");
+// }
 
-#itemThree {
-    background-color: #FF6666;
-    background-image: url("//www.kirupa.com/images/pinkSquare.png");
-}
+// #itemThree {
+//     background-color: #FF6666;
+//     background-image: url("//www.kirupa.com/images/pinkSquare.png");
+// }
 
-#itemFour {
-    background-color: #E8E8E8;
-    background-image: url("//www.kirupa.com/images/graySquare.png");
-}
+// #itemFour {
+//     background-color: #E8E8E8;
+//     background-image: url("//www.kirupa.com/images/graySquare.png");
+// }
 
-#navLinks {
-    text-align: center;
-    width: 550px;
-}
+// #navLinks {
+//     text-align: center;
+//     width: 550px;
+// }
 
-    #navLinks ul {
-        margin: 0px;
-        padding: 0px;
-        display: inline-block;
-        margin-top: 6px;
-    }
+//     #navLinks ul {
+//         margin: 0px;
+//         padding: 0px;
+//         display: inline-block;
+//         margin-top: 6px;
+//     }
 
-        #navLinks ul li {
-            float: left;
-            text-align: center;
-            margin: 10px;
-            list-style: none;
-            cursor: pointer;
-            background-color: #CCCCCC;
-            padding: 5px;
-            border-radius: 50%;
-            border: black 5px solid;
-        }
+//         #navLinks ul li {
+//             float: left;
+//             text-align: center;
+//             margin: 10px;
+//             list-style: none;
+//             cursor: pointer;
+//             background-color: #CCCCCC;
+//             padding: 5px;
+//             border-radius: 50%;
+//             border: black 5px solid;
+//         }
 
-            #navLinks ul li:hover {
-                background-color: #FFFF00;
-            }
+//             #navLinks ul li:hover {
+//                 background-color: #FFFF00;
+//             }
 
-            #navLinks ul li.active {
-                background-color: #333333;
-                color: #FFFFFF;
-                outline-width: 7px;
-            }
+//             #navLinks ul li.active {
+//                 background-color: #333333;
+//                 color: #FFFFFF;
+//                 outline-width: 7px;
+//             }
 
-                #navLinks ul li.active:hover {
-                    background-color: #484848;
-                    color: #FFFFFF;
-                }
+//                 #navLinks ul li.active:hover {
+//                     background-color: #484848;
+//                     color: #FFFFFF;
+//                 }

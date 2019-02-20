@@ -27,7 +27,7 @@ var kid = document.getElementsByClassName('slider-item');
             
             
              // якщо нема елемента як зробити щоб в консолі помилок не було?
-             
+            //  highlight();
         }
     }
     
@@ -43,7 +43,6 @@ var kid = document.getElementsByClassName('slider-item');
                 } 
             }
         }
-       
         var activeElement = elementIsActive();
         if (activeElement.nextSibling.nextSibling == null) {
             return;
@@ -53,7 +52,7 @@ var kid = document.getElementsByClassName('slider-item');
             activeElement.nextSibling.nextSibling.classList.add('slider-item__active');
             activeElement.classList.remove('slider-item__active');
         }
-        
+        // highlight();
         // задача вирішена
     }
 
@@ -68,38 +67,25 @@ var kid = document.getElementsByClassName('slider-item');
     var callback = function(index) {
 
       return function(event) {
-        
-        var kids = document.getElementsByClassName('slider-item');
-        function elementIsActive() {
-            for (var i = 0; i < kids.length; i++) {
-                if (kids[i].classList.contains('slider-item')) {
-                    return kids[i].getAttribute('data-pos');
-                } 
-            }
-        }
-        var activeElement = elementIsActive();
 
-        
         // if (target.tagName != 'li') return;
         var target = event.target;
         
-        target.event = activeElement;
-        
 
-        if (activeElement.classList.contains('slider-item__active')) {
-            target.event.classList.remove('slider-item__active');
-        }
+        // if (activeElement.classList.contains('slider-item__active')) {
+        //     target.event.classList.remove('slider-item__active');
+        // }
 
         for (var j=0; j<event.target.length; j++) {
             if(event.target) {
                 event.target[i] = kids[i];
             } 
         }
-       
-        console.log(index);
-        console.log("target", event.target)
+
         // event.target = goNext()
+
         highlight(target);
+        // currentSlide(target);
     }
 }
 
@@ -115,27 +101,123 @@ var kid = document.getElementsByClassName('slider-item');
         if (selectedLi) {
             selectedLi.classList.remove('slider__list-active');
         }
+        
         selectedLi = index;
         selectedLi.classList.add('slider__list-active');
 
-
-
-        var kids = document.getElementsByClassName('slider-item');
-        console.log(kids);
-        
-        
-        function elementIsActive() {
-            for (var i = 0; i < kids.length; i++) {
-                if (kids[i].classList.contains('slider-item__active')) {
-                    return kids[i].getAttribute('data-pos');
-                } 
-            }
-        }
-
-        var activeElement = elementIsActive();
-
-        selectedLi = activeElement;
-
-        }
+        // var kids = document.getElementsByClassName('slider-item');
     
+        // function elementIsActive() {
+        //     for (var i = 0; i < kids.length; i++) {
+        //         if (kids[i].classList.contains('slider-item__active')) {
+        //             return kids[i];
+        //         } 
+        //     }
+        // }
+
+        // var activeElement = elementIsActive();
+        // activeElement.classList.remove('slider-item__active');
+        // activeElement.classList.add('slider-item__active');
+
+
+        // var slideIndex = 1;
+        // showSlide(slideIndex);
+    
+        // function plusSlides(n){
+        // showSlide(slideIndex += n);
+        // }
+    
+        // function currentSlide(n) {
+        // showSlide(slideIndex = n);
+        // }
         
+        // function showSlide(n){
+        // var i;
+        // var slides = document.getElementsByClassName('slider-item');
+        // // var slides = document.getElementsByClassName("myslides");
+        // // var dots = document.getElementsByClassName("dots");
+        // var dots = document.getElementsByTagName('ul')[1];
+
+        // if (n > slides.length)
+        //  { slideIndex = 1};
+        // if (n < 1) {
+        //      slideIndex = slides.length
+        // };
+        // for (i=0;i<slides.length;i++) {
+        //      slides[i].style.display = "none";
+        // };
+        // for (i=0;i<dots.length;i++) {
+        //     dots[i].className = dots[i].className.replace(" slider__list-active","");
+        // };
+        //     slides[slideIndex-1].style.display = "block";
+        //     dots[slideIndex-1].className += " slider__list-active";
+        // }
+        }
+
+        
+        
+        
+        
+        
+
+
+
+let corousels = document.getElementsByClassName('slider');
+
+[].forEach.call(corousels, function (c) {
+    let next = c.getElementsByClassName('next__link')[0],
+        prev = c.getElementsByClassName('back__link')[0],
+        bubblesContainer = c.getElementsByClassName('slider__item')[0],
+        inner = c.getElementsByClassName('slider__text')[0],
+        imgs = c.getElementsByClassName('slider-item'),
+        currentImageIndex = 0,
+        width = 1280,
+        bubbles = [];
+        
+        
+       
+        
+        for (let i = 0; i < imgs.length; i++) {
+            let b = document.createElement('span');
+            b.classList.add('bubble');
+            bubblesContainer.appendChild(b);
+            bubbles.push(b);
+            console.log(bubbles);
+            
+
+            b.addEventListener('click', function () {
+                currentImageIndex = i;
+                switchImg();
+            });
+        };
+
+        function switchImg() {
+            inner.style.left = -width * currentImageIndex + "px";
+
+            bubbles.forEach(function (b, i) {
+                if (i === currentImageIndex) {
+                    b.classList.add('slider-item__active');
+                } else {
+                    b.classList.remove('slider-item__active')
+                }
+            })
+        };
+
+        next.addEventListener('click', function () {
+            currentImageIndex++;
+
+            if (currentImageIndex >= imgs.length) {
+                currentImageIndex = 0;
+            }
+            switchImg();
+        });
+
+        prev.addEventListener('click', function () {
+            currentImageIndex--;
+
+            if (currentImageIndex < 0) {
+                currentImageIndex = imgs.length - 1;
+            }
+            switchImg();
+        });
+})
