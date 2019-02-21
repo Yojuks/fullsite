@@ -142,34 +142,34 @@
 }
 
 
-.bubbles {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-bottom: 5px;
-}
+// .bubbles {
+//     display: flex;
+//     justify-content: center;
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     margin-bottom: 5px;
+// }
 
-.bubble {
-    margin: 2.5px;
-    background-color: white;
-    border-radius: 1000000px;
-    width: 10px;
-    height: 10px;
-    display: inline-block;
-    opacity: 0.25;
-    transition: opacity 0.2s linear;
-    cursor: pointer;
-}
+// .bubble {
+//     margin: 2.5px;
+//     background-color: white;
+//     border-radius: 1000000px;
+//     width: 10px;
+//     height: 10px;
+//     display: inline-block;
+//     opacity: 0.25;
+//     transition: opacity 0.2s linear;
+//     cursor: pointer;
+// }
 
-.bubble:hover {
-    opacity: 0.65;
-}
-.bubble .active {
-    opacity: 1;
-}
+// .bubble:hover {
+//     opacity: 0.65;
+// }
+// .bubble .active {
+//     opacity: 1;
+// }
 
 
 
