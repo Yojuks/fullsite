@@ -135,16 +135,16 @@ var kid = document.getElementsByClassName('slider-item');
         console.log(selectedLi.dataset.pos);
 
         var sliders = document.getElementsByClassName('slider-item');
-    
-        
-        // var dots = document.getElementsByClassName('slider__list');
-        // console.log(dots.dataset.pos);
+
             for (var i = 0; i < sliders.length; i++) {
                 if (selectedLi.dataset.pos === sliders[i].dataset.pos) {
-                    sliders[i].classList.remove('slider-item__active');
+                    
                     sliders[i].classList.add('slider-item__active');
+                } else {
+                    sliders[i].classList.remove('slider-item__active');
                 }
             }
+            
         }
 
         
