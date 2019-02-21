@@ -1,3 +1,5 @@
+
+
 var backLink = document.getElementsByClassName('back__link')[0];
 var nextLink = document.getElementsByClassName('next__link')[0];
 var parent = document.getElementById('slider');
@@ -104,13 +106,13 @@ var kid = document.getElementsByClassName('slider-item');
         // if (activeElement.classList.contains('slider-item__active')) {
         //     target.event.classList.remove('slider-item__active');
         // }
-        for (var j=0; j<event.target.length; j++) {
-            if(event.target) {
-                event.target[i] = kids[i];
-                console.log(kids[i]);
+        // for (var j=0; j<event.target.length; j++) {
+        //     if(event.target) {
+        //         event.target[i] = kids[i];
+        //         console.log(kids[i]);
                 
-            } 
-        }
+        //     } 
+        // }
         highlight(target);
     }
 }
@@ -129,23 +131,20 @@ var kid = document.getElementsByClassName('slider-item');
         }
         selectedLi = index;
         selectedLi.classList.add('slider__list-active');
+    
+        console.log(selectedLi.dataset.pos);
 
-
-        function activeSlider(index) {
-                for (var i = 0; i < kids.length; i++) {
-                    if (kids[i].classList.contains('slider-item__active')) {
-                        return kids[i];
-                    } 
+        var sliders = document.getElementsByClassName('slider-item');
+    
+        
+        // var dots = document.getElementsByClassName('slider__list');
+        // console.log(dots.dataset.pos);
+            for (var i = 0; i < sliders.length; i++) {
+                if (selectedLi.dataset.pos === sliders[i].dataset.pos) {
+                    sliders[i].classList.remove('slider-item__active');
+                    sliders[i].classList.add('slider-item__active');
                 }
             }
-            var activeSlider = activeSlider();
-        
-            var dots = document.getElementsByClassName('slider__list');
-
-            for (var i = 0; i < kids.length; i++) {
-                index =  kids[i].dataset.pos;
-            }
-
         }
 
         
