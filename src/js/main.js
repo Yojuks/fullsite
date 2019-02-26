@@ -2,7 +2,6 @@
 
 var backLink = document.getElementsByClassName('back__link')[0];
 var nextLink = document.getElementsByClassName('next__link')[0];
-var parent = document.getElementById('slider');
 var kid = document.getElementsByClassName('slider-item');
 
 

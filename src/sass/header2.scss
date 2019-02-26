@@ -1,0 +1,126 @@
+@import 'variables';
+
+.container-menu {
+    float: left;
+    width: 135px;
+    background-color:  #565d67;
+    height: 648px;
+    padding: 60px;
+    position: relative;
+}
+.header-main--block {
+    margin-top: 40px;
+}
+
+.wrapper__menu--column {
+    float: left;
+}
+
+.close {
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    width: 13px;
+    height: 13px;
+    opacity: 0.3;
+    
+    }
+    .close:hover {
+    opacity: 1;
+    }
+    .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 13px;
+    width: 2px;
+    background-color: white;
+    }
+    .close:before {
+    transform: rotate(45deg);
+    }
+    .close:after {
+    transform: rotate(-45deg);
+    }
+
+.wrapper__list--column {
+    display: block;
+    padding: 0px;
+    font-size: 16px;
+    padding-bottom: 30px;
+    font-family: "Titillium Web";
+}
+
+.wrapper__item--column {
+    text-align: left;
+    float: left;
+    padding-top: 60px;
+}
+.link--color {
+    color: #bbbec2;
+}
+.horizontalLine {
+    width: 135px;
+    color: #bbbec2;
+    margin-bottom: 30px;
+}
+
+.flex {
+    display: flex;
+    justify-content: flex-start;
+    font-family: "Titillium Web";
+    color: #bbbec2;
+}
+.flex-block {
+    padding: 5px;
+    border: 1px solid #bbbec2;
+    border-radius: 50%;
+    padding-right: 20px;
+}
+.flex-item {
+    margin-left: 10px;
+}
+
+.slider__item--column {
+    display: flex;
+    flex-direction: column;
+}
+.wrapper-logo__paragraph--size {
+    font-size: 64px;
+    font-family: $fontMenu;
+    text-align: center;
+    
+}
+.header-main__wrapper--float {
+    float: left;
+    width: 900px;
+    padding: 0px;
+}
+.wrapper-logo--float {
+    float: none;
+    width: 100%;
+    padding-top: 180px;
+}
+.slider__navigation--right {
+    width: 125px;
+    margin: 0 auto;
+    padding-top: 300px;
+    float: right;
+}
+.slider-item__text--size {
+    font-size: 42px;
+}
+
+.menu-short {
+    width: 39px;
+    height: 39px;
+    border-radius: 3px;
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+}
+.menu-short__item  {
+    width: 13px;
+    height: 2px;
+    color: #ffffff;
+}
