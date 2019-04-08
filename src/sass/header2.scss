@@ -2,15 +2,16 @@
 
 .container-menu {
     float: left;
-    width: 135px;
+    width: 10.546875%;
     background-color:  #565d67;
-    height: 648px;
-    padding: 60px;
+    height: 768px;
+    padding: 0 4.6875% 0 4.6875%;
     position: relative;
     // transform: translate(-200%);
 }
 .header-main--block {
     margin-top: 40px;
+    height: 768px;
 }
 .wrapper__menu--column {
     float: left;
@@ -47,7 +48,7 @@
     padding: 0px;
     font-size: 16px;
     padding-bottom: 30px;
-    font-family: "Titillium Web";
+    font-family: $fontMenu;
 }
 
 .wrapper__item--column {
@@ -68,7 +69,7 @@
     // display: flex;
     // justify-content: flex-start;
     display: inline-block;
-    font-family: "Titillium Web";
+    font-family: $fontMenu;
     color: #bbbec2;
 }
 .social {
@@ -81,6 +82,7 @@
 }
 .social__item {
     margin-left: 10px;
+    font-family: $fontMenu;
 }
 
 .slider__item--column {
@@ -95,16 +97,17 @@
 }
 .header-main__wrapper--float {
     float: left;
-    width: 900px;
+    width: 70%;
     padding: 0px;
 }
 .wrapper-logo--float {
     float: none;
     width: 100%;
-    padding-top: 180px;
+    padding-top: 120px;
+    font-weight: 400;
 }
 .slider__navigation--right {
-    width: 125px;
+    width: 10%;
     margin: 0 auto;
     padding-top: 300px;
     float: right;
@@ -156,7 +159,7 @@
 .bigButton {
     display: block;
     margin: 0 auto;
-    font-family: "Titillium Web";
+    font-family: $fontMenu;
     font-size: 18px;
     border: 1px solid #222222;
     background-color: #cdcdcd;
@@ -165,4 +168,9 @@
 
 .slider__text--height {
     height: 300px;
+}
+
+.slider__list--column {
+    margin: 0px;
+    margin-bottom: 5px;
 }

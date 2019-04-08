@@ -1,0 +1,96 @@
+@import 'variables';
+
+.call-action1 {
+    // height: 211px;
+    background-color: #ffffff;
+    padding: 40px;
+    width: 1200px;
+    height: 400px;
+}
+
+.title-text__item {
+    text-align: center;
+    color: #222222;
+    font-family: "Titillium Web";
+    font-size: 32px;
+    font-weight: 400;
+}
+.middle-text__item {
+    margin: 0 auto;
+    color: #4b4b4b;
+    font-family: "Titillium Web";
+    font-size: 18px;
+    font-weight: 300;
+    width: 533px;
+}
+
+.input-button {
+    text-align: center;
+    margin-top: 40px;
+    
+}
+.input-button__email {
+    height: 54px;
+    width: 435px;
+    font-size: 25px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.input-button__subscribe {
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #ea6060;
+    padding: 21px;
+    // margin-left: 20px;
+    margin-top: 10px;
+}
+
+.input-button__email::-webkit-input-placeholder {
+    padding-left: 15px;
+    font-size: 20px;
+  }
+
+.call-button {
+    height: 160px;
+    background: #565d67;
+    margin-top: 40px;   
+}
+
+.input-button__text {
+    // display: inline-block;
+}
+
+.text-button {
+    text-align: center;
+}
+
+.input-button__newbtn {
+    // display: inline-block;
+    margin-top: 45px;
+}
+
+.input-button__number {
+    display: block;
+    height: 54px;
+    width: 435px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.input-button__number::placeholder {
+    padding-left: 15px;
+}
+.input-button__user {
+    display: block;
+    height: 54px;
+    width: 435px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+.input-button__user::placeholder {
+    padding-left: 15px;
+}

@@ -1,6 +1,8 @@
 @import 'variables';
-@import 'header';
+@import 'header1';
 @import 'header2';
+@import 'header3';
+@import 'callTheAction1';
 
 * {
     margin: 0;
@@ -13,8 +15,8 @@ body {
     margin: 0 auto;
     margin-top: 83px;
     @include minMaxWidth;
+    margin-bottom: 80px;
     .title {
-        width: 145px;
         color: #222222;
         font-family: 'Titillium Web', sans-serif;
         font-size: 40px;
@@ -22,5 +24,6 @@ body {
         line-height: 62.69px;
         letter-spacing: 0.23px;
         margin: 0 auto;
+        text-align: center;
     }
 }

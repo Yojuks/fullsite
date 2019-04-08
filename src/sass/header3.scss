@@ -1,0 +1,125 @@
+@import 'variables';
+
+.wrapper__item--header3 {
+    text-align: center;
+}
+
+.wrapper__list--logo {
+    font-size: 48px;
+    font-weight: 400;
+    font-family: $fontMenu;
+    font-family: "Titillium Web", sans-serif;
+    padding: 0;
+    padding-left: 60px;
+}
+.wrapper__list--header3 {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $fontMenu;
+    padding-left: 60px;
+}
+.wrapper__list--padding-left {
+    padding: 0;
+}
+
+.video {
+    text-align: center;
+}
+
+.play-btn {
+    display: flex;
+    height: 92px;
+    width: 92px;
+    background: #ea6060;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.play-btn__play {
+    width: 33px;
+    height: 44px;
+    text-align: center;
+    margin-left: 10%;
+}
+.video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(768px - 73px);
+    position: relative;
+}
+.play-btn__text {
+    font-size: 42px;
+    font-family: $fontMenu;
+    font-weight: 100;
+}
+.video-item {
+    display: flex;
+
+}
+.hidden {
+    display: none;
+}
+
+.playBtn {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.controls {
+    padding: 10px;
+}
+
+.download {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+.download__link {
+    background-image: url(img/download.png);
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+.wrapper-logo__paragraph--white {
+    color: #ffffff;
+}
+.link--white {
+    color: #ffffff;
+}
+.header-main--height {
+    height: 480px;
+    margin-top: 40px;
+}
+
+.slide-image {
+    display: flex;
+    height: 375px;
+    justify-content: center;
+}
+.slide-image__item {
+    display: block;
+    height: 100%;
+}
+
+.slide-image__item--height {
+    height: 106px;
+    margin-top: 150px;
+}
+.slide-image__item--image {
+    display: none;
+    height: 375px;
+}
+.slide-image__item--active {
+    display: block;
+    transition: 0.6s ease-out;
+}
+.slide-image__item--active:hover {
+    
+}
+.slide-image__slider {
+    height: 375px;
+}
