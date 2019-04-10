@@ -105,6 +105,7 @@ var kid = document.getElementsByClassName('slider-item');
         if (selectedLi) {
             selectedLi.classList.remove('slider__list-active');
         }
+
         selectedLi = index;
         selectedLi.classList.add('slider__list-active');
 
@@ -338,66 +339,326 @@ var kid = document.getElementsByClassName('slider-item');
 
 
 // forms validate 
-    var username = document.getElementsByClassName('input-button__user')[0];
-    var email = document.getElementsByClassName('input-button__email')[0];
-    var number = document.getElementsByClassName('input-button__number')[0];
+    // var username = document.getElementsByClassName('input-button__user')[0];
+    var username = document.forms.vform[0];
+    console.log(username);
+    
+    // var email = document.getElementsByClassName('input-button__email')[0];
 
+    var email = document.forms.vform[1];
+    console.log(email);
+    
+    // var number = document.getElementsByClassName('input-button__number')[0];
+    var number = document.forms.vform[2];
+    console.log(number);
+    
     var name_error = document.getElementById('name_error');
     var email_error = document.getElementById('email_error');
     var email_error = document.getElementById('number_error');
 
-    username.addEventListener('blur', nameVerify, true);
-    email.addEventListener('blur', emailVerify, true);
-    number.addEventListener('blur', numberVerify, true);
+    // username.addEventListener('blur', nameVerify, true);
+    // email.addEventListener('blur', emailVerify, true);
+    // number.addEventListener('blur', numberVerify, true);
+    
+    // function validate() {
+    //     if (username.value == "") {
+    //     username.style.border = "1px solid red";
+    //     username.focus();
+    //     return false;
+    //     }
+    //     if (email.value == "") {
+    //     email.style.border = "1px solid red";
+    //     email.focus();
+    //     return false;
+    //     }
+    //     if (number.value == "") {
+    //         number.style.border = "1px solid red";
+    //         number.focus();
+    //         return false;
+    //     }
+    //     if (number.value.length >= 11) {
+    //         alert("Введіть повний номер мобільного");
+    //         number.focus();
+    //         return false;
+    //     }
+    //         return !isNaN(parseFloat(number)) && isFinite(number);
+    //     };
+    
+    // function nameVerify() {
+    //     if (username.value != "") {
+    //     username.style.border = "1px solid #5e6e66";
+    //     name_error.innerHTML = "";
+    //     return true;
+    //     }
+    // }
 
-    function validate() {
-        if (username.value == "") {
-        username.style.border = "1px solid red";
-        username.focus();
-        return false;
+    // function emailVerify() {
+    //     if (email.value != "") {
+    //         email.style.border = "1px solid #5e6e66";
+    //         email_error.innerHTML = "";
+    //         return true;
+    //     }
+    //     var r = /^\w+@\w+\.\w{2,4}$/i;
+    //     if (!r.test(document.email.value)) {
+    //         alert("Введіть правильний емейл");
+    //     }
+    // }
+
+    // function numberVerify() {
+    //     if (number.value != "") {
+    //         number.style.border = "1px solid #5e6e66";
+    //         email_error.innerHTML = "";
+    //         return true;
+    //     }
+    // };
+
+    var forms = document.forms[0];
+    var elemForms = forms.elements;
+
+    console.log(forms);
+    console.log(elemForms);
+    
+    var selectedElementForms;
+    var indexElements = 1;
+
+    var callbackValidate = function(index) {
+
+        return function(event) {
+            var target = event.target;
+            console.log(target);
+
+            event.preventDefault();
+            if (target.tagName != "INPUT") {return}; 
+            console.log(target.tagName);
+            
+            if (target === elemForms.username) {
+                if (elemForms.username.value == "") {
+                    elemForms.username.style.border = "1px solid tomato";
+                    elemForms.username.focus();
+                    return true;
+                    } else {
+                        elemForms.username.style.border = "1px solid black";
+                    }
+                
+            }
+
+            if (target === elemForms.email) {
+                if (elemForms.email.value == "") {
+                    elemForms.email.style.border = "1px solid tomato";
+                    elemForms.email.focus();
+                    return true;
+                    } else {
+                        elemForms.email.style.border = "1px solid black";
+                    }
+
+                    var EMAIL = /^\w+@\w+\.\w{2,4}$/i;
+                if (!EMAIL.test(elemForms.email.value)) {
+                    alert("Введіть правильний емейл");
+                }
+            }
+
+            if (target === elemForms.number) {
+                if (elemForms.number.value == "") {
+                    elemForms.number.style.border = "1px solid tomato";
+                    elemForms.number.focus();
+                    return true;
+                    } else {
+                        elemForms.number.style.border = "1px solid black";
+                    }
+                    
+
+                    if (elemForms.number.value.length > 11 || elemForms.number.value.length < 11) {
+                        alert('Введіть повний номер телефону');
+                        return true;
+                    } 
+            }
+            
+                return !isNaN(parseFloat(number)) && isFinite(number);
+
+                
+            
+            
+            // light(index);
+            // for (let i = 0; i < forms.elements.length; i++) {
+            //     target = forms.elements[i];
+            //     console.log(target);
+            // }
         }
-        if (email.value == "") {
-        email.style.border = "1px solid red";
-        email.focus();
-        return false;
-        }
-        if (number.value == "") {
-            number.style.border = "1px solid red";
-            number.focus();
-            return false;
-        }
-        if (number.value.length >= 11) {
-            alert("Введіть повний номер мобільного");
-            number.focus();
-            return false;
-        }
-            return !isNaN(parseFloat(number)) && isFinite(number);
-        };
+    };
+
+    forms.addEventListener('submit', callbackValidate(index));
+
+    forms.addEventListener('blur', callbackValidate(index), true);
+
+    // function light(index) {
+          
+    //     // selectedElementForms = index;
+    // };
+    // var callback = function(index) {
+    //     return function(event) {
+          
+    //       var target = event.target;
+    //       if (target.tagName != "LI") {return}; // Why don`t working?
+  
+    //       highlight(target);
+    //       console.log(event);
+          
+    //   }
+    //   }
+    //   allDot.addEventListener('click', callback(index));
+    
+    
+    
+   
+
+    
     
 
-    function nameVerify() {
-        if (username.value != "") {
-        username.style.border = "1px solid #5e6e66";
-        name_error.innerHTML = "";
-        return true;
-        }
-    }
-    function emailVerify() {
-        if (email.value != "") {
-            email.style.border = "1px solid #5e6e66";
-            email_error.innerHTML = "";
-            return true;
-        }
-        var r = /^\w+@\w+\.\w{2,4}$/i;
-        if (!r.test(document.email.value)) {
-            alert("Введіть правильний емейл");
-        }
-    }
-    function numberVerify() {
-        if (number.value != "") {
-            number.style.border = "1px solid #5e6e66";
-            email_error.innerHTML = "";
-            return true;
-        }
-    }
+    // function rec(num) {
+    //     console.log(num)
+    //     if (num > 1) {
+    //        rec(num - 1)
+    //     }   
+       
+    // }
+    
+    // rec(5)
+
+
+
+    // function rec(num) {
+    //     if (num > 1) {
+    //        console.log(num);
+    //     }  else {
+    //         rec(num - 1);
+    //     }
+    // }
+    
+    // rec(5);
+
+    // function rec(num) {
+        
+    //    for (var i = num; i > 0; i--) {
+    //         console.log(i);
+    //    }
+    // };
+    
+    // rec(5);
+
+
+    // function rec(num) {
+    //     if (num > 1)  {
+    //         for (var i = num; i > 0; i--) {
+    //             console.log(rec(num - 1));
+    //         }
+    //     } 
+    // };
+    
+    // rec(5);
+
+
+
+
+    // function min(a, b) {
+    //     // if (a < b) {
+    //     //     return console.log(a);
+    //     // } else {
+    //     //     return console.log(b);
+    //     // }
+    //     return (a < b) ?  console.log(a) : console.log(b);
+    // };
+
+    // min(2, 5);
+    // min(3, -1);
+    // min(1, 1);
+
+    // function pow(x,n) {
+    //     var result = x;
+    //     // if (n === 1) {
+    //     //     console.log(x);
+    //     // }
+    //     for (var i = 1; i < n; i++) {
+    //         result = result * x;
+    //         // 3 = 3 * 3 = 9;
+    //         // 9 = 9 * 3;
+    //     }       
+    //     return console.log(result);
+            
+    // };
+
+    // pow(3, 2);
+    // pow(3, 3);
+    // pow(3, 4);
+    // pow(1, 100);
+
+
+    // function pow(x, n) {
+    //     var result = x;
+    //     if (n > 1) {
+    //         x * pow(x, n-1);
+    //     }
+
+    // }
+
+  
+
+    // function pow(x, n) {
+    //     if (n != 1) {
+    //       return x * pow(x, n - 1);
+    //     } else {
+    //       return x; 
+    //     }
+    //   }
+
+    //   alert (pow(2, 3));
+
+    // function sumTo(n) {
+    //     var result = n;
+    //     for (var i = 0; i < n; i++) {
+    //         result = result + i;
+    //     }
+    //     return result;
+    // }
+
+    // console.log(sumTo(100));
+    
+    // сума всіх попередніх членів
+    // function sumTo(n) {
+        
+    //     if (n>1) {
+    //        return n + sumTo(n-1);
+    //     }
+    //     return n;
+    // }
+    
+    // console.log(sumTo(3));
+
+    // факторіал
+    // function factorial(n) {
+    //     if (n!=1) {
+    //         return n * factorial(n - 1);
+    //     }
+    //     return n;
+    // }
+    // alert( factorial(5) );
+    
+    // function fib(n) {
+    //     var z = [];
+        
+    //     var a = 1;
+    //     var b = 1;
+    //     z.push(a, b);
+
+    //     for (var i = 2; i <= n; i++) {
+    //         var c = a + b;
+    //         a = b;
+    //         b = c;
+    //         z.push(b);
+    //     }
+    //     return a, z;
+    // }
+
+    // console.log(fib(6));
+   
+    
     
