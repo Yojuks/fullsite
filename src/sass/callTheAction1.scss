@@ -61,7 +61,7 @@
 }
 
 .input-button__text {
-    // display: inline-block;
+    display: inline-block;
 }
 
 .text-button {
@@ -69,7 +69,7 @@
 }
 
 .input-button__newbtn {
-    // display: inline-block;
+    display: inline-block;
     margin-top: 45px;
 }
 
@@ -93,4 +93,12 @@
 }
 .input-button__user::placeholder {
     padding-left: 15px;
+}
+
+.highlight {
+    background: #bbbec2;
+}
+
+.highlight1 {
+    background: white;
 }
