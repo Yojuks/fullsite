@@ -2,8 +2,11 @@
 $backgroundColorMain: #ecedee;
 $backgroundColorLocal: #cdcdcd;
 $blackColor: black;
+$colorLogo: #222222;
+$colorDots: #777777;
+$colorList: #bbbec2;
 // fonts
-$fontLogo: "Titillium Web - Semi Bold";
+$fontLogo: "Titillium Web";
 $fontMenu: 'Titillium Web', sans-serif;
 // mixCode
 @mixin minMaxWidth {

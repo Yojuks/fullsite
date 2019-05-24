@@ -1,0 +1,34 @@
+@import 'variables';
+
+.header-main__servises2 {
+    height: 639px;
+    background-color: #ffffff;
+    margin-top: 40px;
+}
+.middle-text__servises2 {
+   padding-top: 30px;
+}
+.middle-servises2 {
+    display: flex;
+    height: 150px;
+}
+.middle-wrap {
+    width: 33%;
+    position: relative;
+    padding-left: 17%;
+}
+.middle-wrap-padding {
+    padding: 115px 15.234375% 0 15.234375%;
+}
+.middle-servises__middle-p-width {
+    width: 96%;
+}
+.middle-wrap__img {
+    position: absolute;
+    top: 0;
+    left: 13%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #cdcdcd;
+}

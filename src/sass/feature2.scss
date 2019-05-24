@@ -1,0 +1,96 @@
+@import 'variables';
+
+.header-main__feature2 {
+    margin-top: 30px;
+    height: 686px;
+    background-color: #ffffff;
+}
+.header-main__iphone {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    position: relative;
+}
+.image-iphone {
+    position: absolute;
+    left: 45.15625%;
+    top: 90px;
+}
+.header-main__options {
+    width: 50%;
+    display: inline-block;
+    float: right;
+}
+.switch-item {
+    display: flex;
+}
+.switch-list {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #cdcdcd;
+}
+.switch-list__p {
+    display: block;
+}
+.switch__item {
+    width: 73%;
+    margin: 40px auto 0;
+}
+.switch__radio {
+    height: 40px;
+}
+
+.switch__input {
+    border: 1px solid black;
+    padding: 23px 58px 23px 58px;
+    font-family: "Titillium Web";
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+//  radio + input 
+.radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  margin: 10px 0 0 7px;
+}
+.radio + .radio-label {
+  position: relative;
+  padding: 0 0 0 35px;
+  cursor: pointer;
+}
+.radio + .radio-label:before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #CDD1DA;
+  border-radius: 50%;
+  background: #FFF;
+}
+.radio + .radio-label:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #9FD468;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+  opacity: 0;
+  transition: .2s;
+}
+.radio:checked + .radio-label:after {
+  opacity: 1;
+}
+.radio:focus + .radio-label:before {
+  box-shadow: 0 0 0 3px rgba(255,255,0,.7);
+}
+

@@ -1,0 +1,61 @@
+@import 'variables';
+
+.progress {
+    display: flex;
+   
+  }
+  .progress-bar {
+    width: 100%;
+    height: 90px;
+  }
+  .progress-bar__text {
+    display: inline-block;
+    font-family: "Titillium Web";
+    font-size: 23px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    width: 55%;
+    height: 50px;
+  }
+  .progress-bar__percent {
+    display: inline-block;
+    font-family: "Titillium Web";
+    font-size: 23px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+    width: 43%;
+    height: 50px;
+  }
+  .line {
+      position: relative;
+      top: -17px;
+  }
+  .blue-line {
+    height: 20px;
+    position: absolute;
+    background-color: #498af3;
+    z-index: 10;
+  }
+  
+  .grey-line {
+    background-color: grey;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  .progress-column {
+    display: flex;
+    flex-direction: column;
+    margin-top: 110px;
+    width: 31%;
+  }
+  .progress-column__margin {
+    margin-left: 13%;
+  }
+  .progress-column__margin-right {
+    margin-left: 8%;
+  }

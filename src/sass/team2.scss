@@ -1,0 +1,65 @@
+@import 'variables';
+
+.header-main__team2 {
+    height: 622px;
+    background-color: #ffffff;
+    margin-top: 40px;
+}
+.middle-servises__slider {
+    width: 75%;
+    margin: 0 auto;    
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 50px;
+}
+.slide-image__team1 {
+    top: -150px;
+}
+.middle-servises__slider-item {
+    display: flex;
+    position: absolute;
+    transition: all 1s ease-in 0.1s;
+    overflow: hidden;
+    width: 100%;
+}
+.active-slide {
+    transform: translate(-100%);
+}
+.main-div {
+    position: relative;
+}
+.middle-servises__hoverrrr {
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    left: -110px;
+    width: 220px;
+    height: 220px;
+    cursor: pointer;
+}
+
+.middle-servises__hover {
+    width: 220px;
+    height: 220px;
+    cursor: pointer;
+}
+.active-slideeee {
+    transition: all 0.5s ease-in 0.1s;
+    transform: translateY(-100%);
+}
+.middle-servises__mugshot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.blue-width {
+    height: 40px;
+    width: 500px;
+    background-color: black;
+}

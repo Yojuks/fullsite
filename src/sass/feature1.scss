@@ -1,0 +1,40 @@
+@import 'variables';
+
+.header-main__feature1 {
+    height: 924px;
+    background-color: #ffffff;
+}
+.title-text__features {
+    font-family: "Titillium Web";
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    padding-top: 80px;
+}
+.middle-text__feature1 {
+    padding-top: 30px;
+}
+.input-button__padding-left {
+    margin-right: 20px;
+}
+.product-images {
+    margin-top: 70px;
+    position: relative;
+}
+.product-images__imac {
+    display: block;
+    margin: 0 auto;
+}
+.product-images__ipad {
+    display: block;
+    position: absolute;
+    top: 120px;
+    left: 62%;
+}
+.product-images__iphone {
+    display: block;
+    position: absolute;
+    top: 250px;
+    left: 30%;
+}

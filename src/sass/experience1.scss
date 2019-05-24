@@ -1,0 +1,26 @@
+@import 'variables';
+
+.header-main__experience-height {
+    height: 597px;
+}
+.canvas {
+  display: flex;
+  width: 73.4375%;
+  margin: 0 auto;
+  justify-content: space-around;
+  padding-top: 80px;
+}
+
+.canvas__text {
+  text-align: center;
+  padding-top: 30px;
+  font-family: $fontLogo; 
+  text-transform: uppercase;
+
+}
+.middle-text__experience1 {
+  width: 44.375%;
+  padding-top: 35px;
+  font-family: $fontLogo;
+}
+

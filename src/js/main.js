@@ -1,11 +1,11 @@
-
-
 var backLink = document.getElementsByClassName('back__link')[0];
 var nextLink = document.getElementsByClassName('next__link')[0];
 var kid = document.getElementsByClassName('slider-item');
 
-// $(function() {
-    function goPrev() {
+
+// $(function() {}();
+    function goPrev(e) {
+        e.preventDefault();
         var kids = document.getElementsByClassName('slider-item');
         function elementIsActive() {
             for (var i = 0; i < kids.length; i++) {
@@ -21,7 +21,6 @@ var kid = document.getElementsByClassName('slider-item');
         if (activeElement.previousSibling) {
             activeElement.classList.remove('slider-item__active');
             activeElement.previousSibling.previousSibling.classList.add('slider-item__active');
-
         }
         var dots = document.getElementsByClassName('slider__list');
         function dotsIsActive() {
@@ -40,7 +39,8 @@ var kid = document.getElementsByClassName('slider-item');
             activeDot.classList.remove('slider__list-active');
         }
     }
-    function goNext() {
+    function goNext(e) {
+        e.preventDefault();
         // отримати всю колекцію елементів 'slider-item'
         var kids = document.getElementsByClassName('slider-item');
         //взнати елемент який зараз активний
@@ -78,8 +78,12 @@ var kid = document.getElementsByClassName('slider-item');
             activeDot.classList.remove('slider__list-active');
         }
     }
+
     backLink.addEventListener('click', goPrev);
     nextLink.addEventListener('click', goNext);
+
+   
+
     var selectedLi;
     var allDot = document.getElementsByTagName('ul')[1];
     var index = 1;
@@ -121,19 +125,18 @@ var kid = document.getElementsByClassName('slider-item');
             }
         }
 
-        // Slider on header1
-        // for short menu - block is hidden
-       $('.menu-short').on('click', function(e) {
-           e.preventDefault();
-          $('.container-menu').toggleClass('activeMenu');
-        //   $('.close').toggleClass('activeMenu');
-          $('.header-main__wrapper--float').toggleClass('activeContent');
-       });
-       $('.close').on('click', function(e) {
+     // Slider on header1
+
+    $('.menu-short').on('click', function(e) {
         e.preventDefault();
-       $('.container-menu').toggleClass('activeMenu');
-     //   $('.close').toggleClass('activeMenu');
-       $('.header-main__wrapper--float').toggleClass('activeContent');
+        $('.container-menu').toggleClass('container-menu__active');
+        $('.header-main__wrapper--float').toggleClass('active-content');
+        
+    })
+    $('.close').on('click', function(e) {
+        e.preventDefault();
+        $('.container-menu').toggleClass('container-menu__active');
+        $('.header-main__wrapper--float').toggleClass('activeMenu');
     });
         
     //    for header1
@@ -143,8 +146,11 @@ var kid = document.getElementsByClassName('slider-item');
 
         var callback1 = function(index1) {
             return function(event) {
-              // if (target.tagName != 'li') return;
+              
+            
               var target = event.target;
+              if (target.tagName != "LI") {return};
+
               highlight1(target);
           }
       }
@@ -152,7 +158,6 @@ var kid = document.getElementsByClassName('slider-item');
       allDot2.addEventListener('click', callback1(index1));
    
     function highlight1(index1) {
-        
 
         var allDot3 = document.getElementsByTagName('ul')[3].children[0];
        
@@ -198,7 +203,7 @@ var kid = document.getElementsByClassName('slider-item');
             volumeControl.classList.remove('hidden');
             videoElement.volume = volumeControl.value;
         });
-        console.log(videoElement.volume);
+        
        
         // запускам или останавливаем воспроизведение
         playBtnControl.addEventListener('click', function () {
@@ -321,13 +326,6 @@ var kid = document.getElementsByClassName('slider-item');
             activeElement.classList.remove('slide-image__item--active');
             activeElement.previousSibling.previousSibling.classList.add('slide-image__item--active');
         } 
-
-        // for (var i = 0; i < activeImage.length; i++) {            
-        //     // if (activeImage[length-1]) {
-        //     //     activeImage[length-1] = activeImage[0];
-        //     // }
-        // }
-        
     }
     
     btnRight.addEventListener('click', goNextHeader3);
@@ -335,459 +333,488 @@ var kid = document.getElementsByClassName('slider-item');
 
 
 
-// forms validate 
-    // var username = document.getElementsByClassName('input-button__user')[0];
-    // var username = document.forms.vform[0];
-    // console.log(username);
-    
-    // // var email = document.getElementsByClassName('input-button__email')[0];
-
-    // var email = document.forms.vform[1];
-    // console.log(email);
-    
-    // // var number = document.getElementsByClassName('input-button__number')[0];
-    // var number = document.forms.vform[2];
-    // console.log(number);
-    
-
-    // username.addEventListener('blur', nameVerify, true);
-    // email.addEventListener('blur', emailVerify, true);
-    // number.addEventListener('blur', numberVerify, true);
-    
-    // function validate() {
-    //     if (username.value == "") {
-    //     username.style.border = "1px solid red";
-    //     username.focus();
-    //     return false;
-    //     }
-    //     if (email.value == "") {
-    //     email.style.border = "1px solid red";
-    //     email.focus();
-    //     return false;
-    //     }
-    //     if (number.value == "") {
-    //         number.style.border = "1px solid red";
-    //         number.focus();
-    //         return false;
-    //     }
-    //     if (number.value.length >= 11) {
-    //         alert("Введіть повний номер мобільного");
-    //         number.focus();
-    //         return false;
-    //     }
-    //         return !isNaN(parseFloat(number)) && isFinite(number);
-    //     };
-    
-    // function nameVerify() {
-    //     if (username.value != "") {
-    //     username.style.border = "1px solid #5e6e66";
-    //     name_error.innerHTML = "";
-    //     return true;
-    //     }
-    // }
-
-    // function emailVerify() {
-    //     if (email.value != "") {
-    //         email.style.border = "1px solid #5e6e66";
-    //         email_error.innerHTML = "";
-    //         return true;
-    //     }
-    //     var r = /^\w+@\w+\.\w{2,4}$/i;
-    //     if (!r.test(document.email.value)) {
-    //         alert("Введіть правильний емейл");
-    //     }
-    // }
-
-    // function numberVerify() {
-    //     if (number.value != "") {
-    //         number.style.border = "1px solid #5e6e66";
-    //         email_error.innerHTML = "";
-    //         return true;
-    //     }
-    // };
-
-    // var name_error = document.getElementsByClassName('error-user')[0];
-    // console.log(name_error);
-    
-    // var number_error = document.getElementsByClassName('error-number')[0];
-    // console.log(number_error);
-
-    // var email_error = document.getElementsByClassName('error-email')[0];
-    // console.log(email_error);
-
     var forms = document.forms[0];
     var elemForms = forms.elements;
 
-    console.log(forms);
-    console.log(elemForms);
+    var callbackValidateBlur = function(e) {
+        e.target.style.background = 'white';
+
+        if (e.target.value !== "") {
+            e.target.style.border = "1px solid black";            
+        }
+
+        var EMAIL = /^\w+@\w+\.\w{2,4}$/i;
+        if (e.target.getAttribute('id') === 'email' && !EMAIL.test(e.target.email)) {
+            e.target.nextSibling.nextSibling.innerHTML = "Email is not correct"    
+        } else {
+            e.target.nextSibling.nextSibling.innerHTML = ""
+        }
+
+        if (e.target.getAttribute('id') === 'number' && e.target.value.length > 10) {
+            e.target.nextSibling.nextSibling.innerHTML = '';
+            console.log('lenght is 11');
+            
+        } else if (e.target.getAttribute('id') === 'number' && e.target.value.length < 12) {
+            console.log('менше 12');
+            e.target.nextSibling.nextSibling.innerHTML = 'Lenght of number is not correct';
+        } 
+        //     return !isNaN(parseFloat(number)) && isFinite(number);
+    }
     
-    var selectedElementForms;
-    var indexElements = 1;
+    
+    // blur
 
-    var callbackValidate = function(indexElements) {
+    var selectInputandColoredItClick= function(e) {
+    
+        var target = e.target;
 
-        return function(event) {
-            event.preventDefault();
-            var target = event.target;
-            
-            if (target.tagName != "INPUT") {return};
+        var inputIsHere = e.target.value;
+          
+        if (inputIsHere === "") {
+            target.nextSibling.nextSibling.innerHTML = "Name is required"
+            target.style.border = "1px solid tomato"
+            target.focus()
+            target.nextSibling.nextSibling.classList.add('font')
+        } else {
+            target.nextSibling.nextSibling.innerHTML = ""
+        };
 
-            // light(target);
-            // console.log(light(target));
+        var atr = e.target.getAttribute('email');
+    
+    }
+    
 
-            // if (target === elemForms.id){
-            //     if (elemForms.id.value == "") {
+    for (let input of elemForms) {
+        if(input.getAttribute('type') !== 'submit') {
+            input.addEventListener('click', selectInputandColoredItClick)
+            input.addEventListener('blur', callbackValidateBlur)
+        }
+    }
 
-            //         elemForms.username.nextSibling.nextSibling.innerHTML = "Невведено ім'я";
+    // form.addEventListener('submit',submitValidate)
 
-            //         elemForms.username.style.border = "1px solid tomato";
-            //         elemForms.username.focus();
-            //         return true;
-            //         } else {
-            //             elemForms.username.nextSibling.nextSibling.innerHTML = "";
-            //             elemForms.username.style.border = "1px solid black";
-            //         }
-            // }
+    //validateinput(input)
 
-        //     if (target === elemForms.username ) {
-        //         if (elemForms.username.value == "") {
+    //hightlightInput(node)
 
-        //             elemForms.username.nextSibling.nextSibling.innerHTML = "Невведено ім'я";
+    var submitValidate = function() {
+        // var errors = [];
+        // validateinput(input) // error(input)
+        // click button submit  // if error -> prevent, !error -> success
+    }
 
-        //             elemForms.username.style.border = "1px solid tomato";
-        //             elemForms.username.focus();
-        //             return true;
-        //             } else {
-        //                 elemForms.username.nextSibling.nextSibling.innerHTML = "";
-        //                 elemForms.username.style.border = "1px solid black";
-        //             }
-                
-        //     }
 
-        //     if (target === elemForms.email) {
-        //         if (elemForms.email.value == "") {
+// slider on servise 1
+var servise1Slides = document.getElementsByClassName('middle-servises__wrap');
+for (let i = 0; i < servise1Slides.length; i++) {
+    console.log(servise1Slides.length);
+    
+    servise1Slides[i].style.zIndex = servise1Slides.length - i;            
+};
+    const PREW = document.getElementById('image-prev');
 
-        //             elemForms.email.nextSibling.nextSibling.innerHTML = 'Невведено email';
+    const NEXT = document.getElementById('image-next');
 
-        //             elemForms.email.style.border = "1px solid tomato";
-        //             elemForms.email.focus();
-        //             return true;
-        //             } else {
-        //                 elemForms.email.nextSibling.nextSibling.innerHTML = '';
-        //                 elemForms.email.style.border = "1px solid black";
-        //             }
+    NEXT.addEventListener('click', nextOnServise1);
 
-        //            
-        //     }
+    function nextOnServise1() {
+        function activeElement() {
+            for (let i = 0; i < servise1Slides.length; i++) {
+                if (servise1Slides[i].classList.contains('active')) {
+                    return servise1Slides[i];
+                }
+            }
+        };
 
-        //     if (target === elemForms.number) {
-        //         if (elemForms.number.value == "") {
-        //             elemForms.number.style.border = "1px solid tomato";
+        var activeElement = activeElement();
+        
+        if (activeElement.nextElementSibling) {
+            activeElement.classList.add('transform');
+            activeElement.nextElementSibling.classList.add('active');
+            activeElement.classList.remove('active');
+        }
+        if (!activeElement.nextElementSibling) {
+            for (let i=0; i<servise1Slides.length; i++) {
+                servise1Slides[i].classList.remove('transform');
+                servise1Slides[i].classList.remove('active');
+            }
+            servise1Slides[servise1Slides.length - 1].classList.remove('active');
+            servise1Slides[0].classList.add('active');
+            return;
+    }
+};
 
-        //             elemForms.number.nextSibling.nextSibling.innerHTML = 'Невведено телефон';
+PREW.addEventListener('click', prewOnServise1);
 
-        //             elemForms.number.focus();
-        //             return true;
-        //             } else {
-        //                 elemForms.number.style.border = "1px solid black";
-
-        //                 elemForms.number.nextSibling.nextSibling.innerHTML = '';
-        //             }
-                    
-
-        //             if (elemForms.number.value.length > 11 || elemForms.number.value.length < 11) {
-        //                 alert('Введіть повний номер телефону');
-        //                 return true;
-        //             } 
-                        // if (!EMAIL.test(elemForms.email.value)) {
-                        //     alert("Введіть правильний емейл");
-                        // }
-        //     }
-            
-        //         return !isNaN(parseFloat(number)) && isFinite(number);
+function prewOnServise1() {
+    function activeElement() {
+        for (let i = 0; i < servise1Slides.length; i++) {
+            if (servise1Slides[i].classList.contains('active')) {
+                return servise1Slides[i];
+            }
         }
     };
 
-    // function light(indexElements) {
-    //     for (let i = 0; i < elemForms.length; i++) {
-    //         indexElements[i] = elemForms[i];
-    //         return indexElements[i];
-    //     }
-    // }
+    var activeElement = activeElement();
+    console.log(activeElement);
 
-    forms.addEventListener('submit', callbackValidate(index));
+    if (activeElement.previousElementSibling) {
+        activeElement.classList.remove('active');
+        activeElement.previousElementSibling.classList.remove('transform');
+        activeElement.previousElementSibling.classList.add('active');
+    }
 
-    forms.addEventListener('blur', callbackValidate(index), true);
-
-
-    var selectedTd;
-    function EVENT(event) {
-            var target = event.target; // где был клик?
-
-            if (target.tagName != 'INPUT') return; // не на TD? тогда не интересует
-
-            highlight(target); // подсветить TD
-            };
-
-            function highlight(node) {
-            if (selectedTd) {
-                selectedTd.classList.remove('highlight');
-            }
-            selectedTd = node;
-            selectedTd.classList.add('highlight');
-
-            if (selectedTd.value == '') {
-                selectedTd.classList.add('highlight1')
-            } else {
-                selectedTd.classList.remove('highlight1')
-            }
+    if (!activeElement.previousElementSibling) {
+        for (let i=0; i<servise1Slides.length; i++) {
+            servise1Slides[i].classList.add('transform');
+        }
+        servise1Slides[0].classList.remove('active');
+        servise1Slides[servise1Slides.length - 1].classList.add('active');
+        servise1Slides[servise1Slides.length - 1].classList.remove('transform');
+        return;
+}
+};
 
 
-            if (selectedTd.value == "") {
+// slider at team 2
 
-                selectedTd.nextSibling.nextSibling.innerHTML = "Невведено ім'я";
+var servise1SlidesTeam2 = document.getElementsByClassName('middle-servises__slider-item');
 
-                selectedTd.style.border = "1px solid tomato";
-                selectedTd.focus(); // не працює фокус
-                return true;
-                } else {
-                    selectedTd.nextSibling.nextSibling.innerHTML = "";
-                    selectedTd.style.border = "1px solid black";
-                }
-
-                var EMAIL = /^\w+@\w+\.\w{2,4}$/i;
-                if (!EMAIL.test(selectedTd.email.value)) {
-                    alert("Введіть правильний емейл");
-                }
-
-                if (selectedTd.number.value.length > 11 || selectedTd.number.value.length < 11) { // не працює цей участок коду
-                    console.log(selectedTd.number.value.length);
-                    
-                        alert('Введіть повний номер телефону');
-                        return true;
-                    } 
-                    return !isNaN(parseFloat(number)) && isFinite(number);
-                    
-            }
-
-        forms.addEventListener('click', EVENT);
-
-    // function light(index) {
-          
-    //     // selectedElementForms = index;
-    // };
-    // var callback = function(index) {
-    //     return function(event) {
-          
-    //       var target = event.target;
-    //       if (target.tagName != "LI") {return}; // Why don`t working?
+for (let i = 0; i < servise1SlidesTeam2.length; i++) {
+    servise1SlidesTeam2[i].style.zIndex = servise1SlidesTeam2.length - i;            
+};
+    const PREWSLIDER = document.getElementById('image-prev-slider');
   
-    //       highlight(target);
-    //       console.log(event);
-          
-    //   }
-    //   }
-    //   allDot.addEventListener('click', callback(index));
-    
-    
-    
-   
+    const NEXTSLIDER = document.getElementById('image-next-slider');
 
-    
-    
+    NEXTSLIDER.addEventListener('click', nextOnServiseTeam2);
 
-    // function rec(num) {
-    //     console.log(num)
-    //     if (num > 1) {
-    //        rec(num - 1)
-    //     }   
-       
-    // }
-    
-    // rec(5)
+    function nextOnServiseTeam2() {
+        function activeElement() {
+            for (let i = 0; i < servise1SlidesTeam2.length; i++) {
+                if (servise1SlidesTeam2[i].classList.contains('active')) {
+                    return servise1SlidesTeam2[i];
+                }
+            }
+        };
 
-
-
-    // function rec(num) {
-    //     if (num > 1) {
-    //        console.log(num);
-    //     }  else {
-    //         rec(num - 1);
-    //     }
-    // }
-    
-    // rec(5);
-
-    // function rec(num) {
+        var activeElement = activeElement();
+        console.log(activeElement);
         
-    //    for (var i = num; i > 0; i--) {
-    //         console.log(i);
-    //    }
-    // };
-    
-    // rec(5);
+        if (activeElement.nextElementSibling) {
+            activeElement.classList.add('active-slide');
+            activeElement.nextElementSibling.classList.add('active');
+            activeElement.classList.remove('active');
+        }
+        if (!activeElement.nextElementSibling) {
+            for (let i=0; i<servise1SlidesTeam2.length; i++) {
+                servise1SlidesTeam2[i].classList.remove('active-slide');
+                servise1SlidesTeam2[i].classList.remove('active');
+            }
+            servise1SlidesTeam2[servise1SlidesTeam2.length - 1].classList.remove('active');
+            servise1SlidesTeam2[0].classList.add('active');
+            return;
+    }
+};
 
+PREWSLIDER.addEventListener('click', prewOnServiseTeam2);
 
-    // function rec(num) {
-    //     if (num > 1)  {
-    //         for (var i = num; i > 0; i--) {
-    //             console.log(rec(num - 1));
-    //         }
-    //     } 
-    // };
-    
-    // rec(5);
-
-
-
-
-    // function min(a, b) {
-    //     // if (a < b) {
-    //     //     return console.log(a);
-    //     // } else {
-    //     //     return console.log(b);
-    //     // }
-    //     return (a < b) ?  console.log(a) : console.log(b);
-    // };
-
-    // min(2, 5);
-    // min(3, -1);
-    // min(1, 1);
-
-    // function pow(x,n) {
-    //     var result = x;
-    //     // if (n === 1) {
-    //     //     console.log(x);
-    //     // }
-    //     for (var i = 1; i < n; i++) {
-    //         result = result * x;
-    //         // 3 = 3 * 3 = 9;
-    //         // 9 = 9 * 3;
-    //     }       
-    //     return console.log(result);
-            
-    // };
-
-    // pow(3, 2);
-    // pow(3, 3);
-    // pow(3, 4);
-    // pow(1, 100);
-
-
-    // function pow(x, n) {
-    //     var result = x;
-    //     if (n > 1) {
-    //         x * pow(x, n-1);
-    //     }
-
-    // }
-
-  
-
-    // function pow(x, n) {
-    //     if (n != 1) {
-    //       return x * pow(x, n - 1);
-    //     } else {
-    //       return x; 
-    //     }
-    //   }
-
-    //   alert (pow(2, 3));
-
-    // function sumTo(n) {
-    //     var result = n;
-    //     for (var i = 0; i < n; i++) {
-    //         result = result + i;
-    //     }
-    //     return result;
-    // }
-
-    // console.log(sumTo(100));
-    
-    // сума всіх попередніх членів
-    // function sumTo(n) {
-        
-    //     if (n>1) {
-    //        return n + sumTo(n-1);
-    //     }
-    //     return n;
-    // }
-    
-    // console.log(sumTo(3));
-
-    // факторіал
-    // function factorial(n) {
-    //     if (n!=1) {
-    //         return n * factorial(n - 1);
-    //     }
-    //     return n;
-    // }
-    // alert( factorial(5) );
-    
-    // function fib(n) {
-    //     var z = [];
-        
-    //     var a = 1;
-    //     var b = 1;
-    //     z.push(a, b);
-
-    //     for (var i = 2; i <= n; i++) {
-    //         var c = a + b;
-    //         a = b;
-    //         b = c;
-    //         z.push(b);
-    //     }
-    //     return a, z;
-    // }
-
-    // console.log(fib(6));
-   
-
-    // function isArray(arr) {
-    //    var ARRAY = [];
-    // //    console.log(arr.isArray(arr));
-    //         for (var i = 0; i < arr.length; i++) {
-    //             if (arr[i] != 'Array')
-    //                 ARRAY.push(arr[i]);
-                    
-    //                 console.log(arr);
-                    
-    //                 // if (Array.isArray(arr)) {
-    //                 //     arr.next().push(arr[i]);
-    //                 // }
-                 
-    //         }
-    //     return ARRAY;
-    // };
-
-    // var newArray = [1,2,3, [1]];
-    // isArray(newArray);
-    // console.log(newArray);
-
-    // function newFunc(resultArray) {
-        // debugger;
-        var resultArray = [];
-        function toGet(arr) {
-   
-        for (let i = 0; i < arr.length; i++) {
-            
-            if (Array.isArray(arr[i])) {
-                console.log((arr));
-                
-                toGet(arr[i]);
-            } else {
-                resultArray.push(arr[i]);
+function prewOnServiseTeam2() {
+    function activeElement() {
+        for (let i = 0; i < servise1SlidesTeam2.length; i++) {
+            if (servise1SlidesTeam2[i].classList.contains('active')) {
+                return servise1SlidesTeam2[i];
             }
         }
-        return resultArray;
     };
-    // }
+
+    var activeElement = activeElement();
+    
+    if (activeElement.previousElementSibling) {
+        activeElement.classList.remove('active');
+        activeElement.previousElementSibling.classList.remove('active-slide');
+        activeElement.previousElementSibling.classList.add('active');
+    }
+
+
+    if (!activeElement.previousElementSibling) {
+        for (let i=0; i<servise1SlidesTeam2.length; i++) {
+            servise1SlidesTeam2[i].classList.add('active-slide');
+        }
+        servise1SlidesTeam2[0].classList.remove('active');
+        servise1SlidesTeam2[servise1SlidesTeam2.length - 1].classList.add('active');
+        servise1SlidesTeam2[servise1SlidesTeam2.length - 1].classList.remove('active-slide');
+        return;
+}
+};
+
+const hoverIMG = document.getElementsByClassName('middle-servises__hover');
+
+for(var i = 0; i < hoverIMG.length; i++) {
+    hoverIMG[i].addEventListener('click', clicckedImg);
+};
+
+
+function clicckedImg(e) {
+
+    var target = e.target;
+
+    console.log(target);
     
 
-      let newArray = [1, 3 , 4 ,5 , [5, 6, [6, 90]]];
-      console.log(toGet(newArray));
+    if (target.classList.contains('middle-servises__hover')) {
+        e.target.nextElementSibling.children[0].classList.add('active-slideeee');
+    };
+    
+    
+    if (e.target.nextElementSibling.children[0].classList.contains('active-slideeee')) {
+        const hover = document.getElementsByClassName('middle-servises__hoverrrr');
+        for(let i = 0; i < hover.length; i++) {
+            hover[i].addEventListener('click', function (e) {
+                console.log(e.target);
+                e.target.classList.remove('active-slideeee');
+            });
+        };
+    };
+
+    e.preventDefault();
+};
+
+      
+
+        var counter1 = document.getElementById('counter1').getContext('2d');     
+        var counter2 = document.getElementById('counter2').getContext('2d');
+        var counter3 = document.getElementById('counter3').getContext('2d');
+        var counter4 = document.getElementById('counter4').getContext('2d');
+        
+
+        var no1 = 0;
+        var no2 = 0;
+        var no3 = 0;
+        var no4 = 0;
+
+        var pointToFill = 4.72;  
+        var cw = counter1.canvas.width;  
+        var ch = counter1.canvas.height;
+        var diff;   
+
+        // $(window).scroll(function() {
+        //     var scrollCanvas = $('#canvas').offset().top;
+        //     console.log('scrollCanvas -->', scrollCanvas);
+
+        //    var win = $(this).scrollTop() + 300;
+        //     console.log('win --> ', win);
+            
+        //     if ( win >= scrollCanvas) {
+        //         var fill1 = setInterval(fillCounter(no1, 90, counter1, 1), 50);  
+        //         var fill2 = setInterval(fillCounter(no2, 75, counter2, 2), 50);  
+        //         var fill3 = setInterval(fillCounter(no3, 80, counter3, 3), 50);  
+        //         var fill4 = setInterval(fillCounter(no4, 70, counter4, 4), 50); 
+        //     }
+        // });
+
+        function fillCounter(no, num, argCounter, interval) {
+            // Lexical Enviroment
+            return function() {
+            diff = ((no/100) * Math.PI*2*10);
+            argCounter.clearRect(0,0,cw,ch);  
+            argCounter.lineWidth = 10;     
+            argCounter.fillStyle = 'black';     
+            argCounter.strokeStyle = '#498af3';    
+            argCounter.textAlign = 'center';
+            argCounter.font = "25px Titillium Web";   
+            argCounter.fillText(no+'%',75,80);       
+            argCounter.beginPath();
+            argCounter.arc(75,75,70,pointToFill,diff/10+pointToFill);    
+            argCounter.stroke();
+
+           
+            if(no >= num) {
+                clearInterval(intervals[`fill${interval}`]); // ES6 intervals[`fill${interval}`] -> itervals.fill1
+            }
+            no++;
+            }
+        };
+         
+         var fill1 = setInterval(fillCounter(no1, 90, counter1, 1), 50);  
+         var fill2 = setInterval(fillCounter(no2, 70, counter2, 2), 50);  
+         var fill3 = setInterval(fillCounter(no3, 30, counter3, 3), 50);  
+         var fill4 = setInterval(fillCounter(no4, 50, counter4, 4), 50);  
+       
+     var intervals = {
+            fill1,
+            fill2,
+            fill3,
+            fill4
+        };
+
+
+
+
+
+
+
+        // var counterLine1 = document.getElementById('line1');
+        // var counterLine2 = document.getElementById('line2');
+        // var counterLine3 = document.getElementById('line3');
+        // var counterLine4 = document.getElementById('line4');
+
+        
+        // console.log($('.line-blue').css('width'));
+        
+        // var percent1 = document.getElementById('percent1');
+        // var percent2 = document.getElementById('percent2');
+        // var percent3 = document.getElementById('percent3');
+        // var percent4 = document.getElementById('percent4');
+        
+        // console.log('Чого тут пусто? --->', counterLine1.style.width);
+        
+        // counterLine1.style.width = "100px";
+        
+        // counterLine2.style.width = "100px";
+        
+        // counterLine3.style.width = "100px";
+        
+        // counterLine4.style.width = "100px";
+        // function lineI() {
+            //     for (var i = 0; i < line.length; i++) {
+                //         line[i].style.width = '100px';
+                //         return line[i].style.width;
+                //     }
+                // }
+                
+                // var newEnement = lineI();
+                
+                // function lineI() {
+                //     for (var i = 0; i < line.length; i++) {
+                //             line[i].style.width = '100px';
+                //             return line[i].style.width;
+                //     }
+                // };
+        
+    //     var line = document.getElementsByClassName('blue-line');
+        
+    //     function frame(num, counterLine, interval) {
+            
+
+    //         return function () { // толком не працює 
+
+    //             var NUM = counterLine.style.width;
+
+    //             counterLine.style.width = '100px';            
+               
+    //             var newWid = parseInt(NUM);
+                            
+    //             if (newWid >= num) {
+    //                 clearInterval(intervaLs[`intrVal${interval}`]); // зачищає не правильно
+
+    //             } else {
+    //             newWid = newWid + 50 + "px";    
+
+    //             counterLine.style.width = newWid;  
+
+    //             console.log(counterLine.style.width);
+                
+    //             counterLine.innerHTML = (newWid/1280) * 100 * 2 + "%";                   
+    //         }
+    //     }  
+    // };
+            
+    //     var intrVal1 = setInterval(frame(500, line[0], 1), 500);
+    //     var intrVal2 = setInterval(frame(300, line[1], 2), 50);
+    //     var intrVal3 = setInterval(frame(400, line[2], 3), 50);
+    //     var intrVal4 = setInterval(frame(500, line[3], 4), 50);
+
+    //     var intervaLs = {
+    //         intrVal1,
+    //         intrVal2,
+    //         intrVal3,
+    //         intrVal4
+    //     };
+
+       
+    
        
       
+        
     
-   
-      
+    
+    // (function() {
+        //     animate(function(timePassed) {
+            //         line.style.left = timePassed / 5 + 'px';
+            //         console.log("timePassed", timePassed);
+            //         duration: 500;
+            //     }, 2000);
+            //   })();
+            
+            //   // Рисует функция draw
+            //   // Продолжительность анимации duration
+            //   function animate(draw, duration) {
+                //     var start = performance.now();
+                
+                //     requestAnimationFrame(function animate(time) {
+                    //       // определить, сколько прошло времени с начала анимации
+                    //       var timePassed = time - start;
+                    
+                    //       console.log(time, start)
+                    //         // возможно небольшое превышение времени, в этом случае зафиксировать конец
+                    //       if (timePassed > duration) timePassed = duration;
+                    
+                    //       // нарисовать состояние анимации в момент timePassed
+                    //       draw(timePassed);
+                    
+                    //       // если время анимации не закончилось - запланировать ещё кадр
+                    //       if (timePassed < duration) {
+                        //         requestAnimationFrame(animate);
+                        //       }
+                        //     });
+                        //   }
+        var line1 = document.getElementById('line1');
+        var line2 = document.getElementById('line2');
+        var line3 = document.getElementById('line3');
+        var line4 = document.getElementById('line4');
+    
+        var percent1 = document.getElementById('percent1');
+        var percent2 = document.getElementById('percent2');
+        var percent3 = document.getElementById('percent3');
+        var percent4 = document.getElementById('percent4');
+
+          function animate(options) {
+           
+            var start = performance.now();
+          
+            requestAnimationFrame(function animate(time) {
+              // timeFraction от 0 до 1
+              var timeFraction = (time - start) / options.duration;
+              if (timeFraction > 1) timeFraction = 1;
+          
+              // текущее состояние анимации
+              var progress = options.timing(timeFraction)
+          
+              options.draw(progress);
+          
+              if (timeFraction < 1) {
+                requestAnimationFrame(animate);
+              }
+          
+            });
+          }
+
+
+          animate({
+            duration: 2000,
+            timing: function(timeFraction) {
+              return timeFraction;
+            },
+            draw: function(progress) {
+                line1.style.width = ((progress * 360)/400)*100 + '%';
+                line2.style.width = ((progress * 280)/400)*100 + '%';
+                line3.style.width = ((progress * 300)/400)*100 + '%';
+                line4.style.width = ((progress * 340)/400)*100 + '%';
+
+                percent1.innerHTML = line1.style.width ;
+                percent2.innerHTML = line2.style.width;
+                percent3.innerHTML = line3.style.width;
+                percent4.innerHTML = line4.style.width;
+            }
+          });

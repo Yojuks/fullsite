@@ -4,7 +4,8 @@
     // height: 211px;
     background-color: #ffffff;
     padding: 40px;
-    width: 1200px;
+    min-width: 400px;
+    max-width: 1200px;
     height: 400px;
 }
 
@@ -21,7 +22,7 @@
     font-family: "Titillium Web";
     font-size: 18px;
     font-weight: 300;
-    width: 533px;
+    width: 72.5625%;
 }
 
 .input-button {
@@ -36,6 +37,8 @@
     display: block;
     margin: 0 auto;
     margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .input-button__subscribe {
     color: #ffffff;
@@ -44,9 +47,10 @@
     font-weight: 500;
     text-transform: uppercase;
     background-color: #ea6060;
-    padding: 21px;
+    padding: 21px 34px 21px 34px;
     // margin-left: 20px;
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 .input-button__email::-webkit-input-placeholder {
@@ -80,6 +84,8 @@
     font-size: 20px;
     margin: 0 auto;
     margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .input-button__number::placeholder {
     padding-left: 15px;
@@ -90,6 +96,8 @@
     width: 435px;
     font-size: 20px;
     margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 .input-button__user::placeholder {
     padding-left: 15px;
@@ -101,4 +109,8 @@
 
 .highlight1 {
     background: white;
+}
+
+.font {
+    font-family: "Titillium Web";
 }
