@@ -1,0 +1,65 @@
+@import 'variables';
+
+.header-main__testimonials2 {
+    height: 628px;
+}
+.blockquote-wrap {
+    display: flex;
+    margin-top: 80px;
+}
+.blockquote-wrap__column {
+    margin-left: 23%;
+    width: 28%;
+}
+.blockquote__main {
+    position: relative;
+}
+.blockquote__img{
+    position: absolute;
+    width: 83px;
+    height: 83px;
+    left: -38%;
+    // background: url('../img/Mugshot.png') repeat;
+    // background-position: left bottom;
+}
+.blockquote-testimonials2 {
+   width: 77%;
+   text-align: start;
+   font-size: 18px;
+   font-family: $fontLogo;
+}   
+.cite-testimonials2   {
+    display: block;
+    text-align: start;
+    font-family: $fontLogo;
+    width: 86%;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.blockquote__main-margin-right {
+    margin: 0% 0% 0% 14%;
+    
+}
+.blockquote__main-margin {
+    margin-top: 40px;
+}
+.cite-testimonials2-job {
+    font-family: $fontLogo;
+    font-size: 14px;
+}
+.header-main__client-logos {
+    height: 98px;
+    background-color: #bfc2c5;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.wrapper-logo__paragraph-client-logos {
+    padding-left: 30px;
+}
+.header-main__testimonials3 {
+    height: 599px;
+}

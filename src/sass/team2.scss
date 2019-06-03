@@ -22,7 +22,7 @@
     display: flex;
     position: absolute;
     transition: all 1s ease-in 0.1s;
-    overflow: hidden;
+    // overflow: hidden;
     width: 100%;
 }
 .active-slide {
@@ -62,4 +62,7 @@
     height: 40px;
     width: 500px;
     background-color: black;
+}
+.slider__navigation-margin1 {
+    margin-top: 60px;
 }

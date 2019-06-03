@@ -1,0 +1,104 @@
+@import 'variables';
+
+.header-main__testimonials3 {
+    height: 599px;
+}
+.testimonials3-img {
+    display: block;
+    height: 123px;
+    width:  123px;
+    margin: 0 auto;
+}
+.next__link-margin {
+    padding-left: 1%;
+}
+
+.block-for-input {
+    height: 200px;
+}
+.inputinput {
+   position: absolute;
+   visibility: hidden;
+    opacity: 0;
+}
+.inputinput + .inputinput-for {
+  position: relative;
+  padding: 0 0 0 35px;
+  cursor: pointer;
+}
+.inputinput + .inputinput-for:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: grey;
+    border-radius: 50px;
+    top: 0;
+    left: 0;
+}
+.inputinput + .inputinput-for:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50px;
+    top: 7px;
+    left: 7px;
+    opacity: 0;
+}
+
+.inputinput:checked + .inputinput-for:after {
+    opacity: 1;
+}
+
+
+
+.checkbox-input {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+.checkbox-label {
+    position: relative;
+    cursor: pointer;
+    font-family: $fontLogo;
+    padding: 0 0 0 25px;
+}
+
+.checkbox-input + .checkbox-label::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 10%;
+    background-color: white;
+    border: 1px solid black;
+    top: 0;
+    left: 0;
+}
+.checkbox-input + .checkbox-label::after {
+    content: '\2714';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 7px;
+    left: 7px;
+    opacity: 0;
+    color: green;
+}
+.checkbox-input:checked + .checkbox-label::after {
+    opacity: 1;
+}
+
+.gallery {
+    width: 400px;
+    height: 200px;
+    background-color: grey;
+    // overflow: hidden;
+}
+.images {
+    display: flex;
+    align-items: center;
+}
+

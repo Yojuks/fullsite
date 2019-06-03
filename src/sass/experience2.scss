@@ -59,3 +59,20 @@
   .progress-column__margin-right {
     margin-left: 8%;
   }
+  .statistics__number{
+    margin-top: 40px;
+    font-family: $fontLogo;
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.56px;
+    text-align: center;
+    color: $colorLogo;
+}
+
+.newWidth {
+    width: 100px;
+}
+#newWidth {
+  width: 100px;
+}

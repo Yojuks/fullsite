@@ -6,8 +6,9 @@ $colorLogo: #222222;
 $colorDots: #777777;
 $colorList: #bbbec2;
 // fonts
-$fontLogo: "Titillium Web";
+$fontLogo: "Titillium Web", sans-serif;
 $fontMenu: 'Titillium Web', sans-serif;
+$fontRoboto:  'Roboto', sans-serif;
 // mixCode
 @mixin minMaxWidth {
     min-width: 400px;

@@ -5,15 +5,20 @@
     background-color: #ffffff;
 }
 .title-text__features {
-    font-family: "Titillium Web";
     font-size: 40px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2.4px;
     padding-top: 80px;
+    font-family: $fontLogo;
 }
 .middle-text__feature1 {
-    padding-top: 30px;
+    color: #4b4b4b;
+    font-size: 18px;
+    font-weight: 300;
+    width: 64%;
+    padding-bottom: 25px;
+    font-family: $fontLogo;
 }
 .input-button__padding-left {
     margin-right: 20px;

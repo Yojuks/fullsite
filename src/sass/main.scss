@@ -1,17 +1,4 @@
 @import 'variables';
-@import 'header1';
-@import 'header2';
-@import 'header3';
-@import 'callTheAction1';
-@import 'feature1';
-@import 'feature2';
-@import 'servise1';
-@import 'servise2';
-@import 'team1';
-@import 'team2';
-@import 'experience1';
-@import 'experience2';
-@import 'statistics';
 
 * {
     margin: 0;
@@ -40,3 +27,21 @@ body {
         text-align: center;
     }
 }
+
+
+@import 'header1';
+@import 'header2';
+@import 'header3';
+@import 'callTheAction1';
+@import 'feature1';
+@import 'feature2';
+@import 'servise1';
+@import 'servise2';
+@import 'team1';
+@import 'team2';
+@import 'experience1';
+@import 'experience2';
+@import 'statistics';
+@import 'testimonials1';
+@import 'testimonials2';
+@import 'testimonials3';

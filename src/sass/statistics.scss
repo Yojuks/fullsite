@@ -3,6 +3,9 @@
 .header-main__statistics {
     height: 453px;
 }
+.statistics {
+    margin-top: 90px;
+}
 .wrap-statistics {
     display: flex;
     justify-content: space-around;
@@ -10,21 +13,24 @@
 .statistics__photo {
     width: 60px;
     height: 60px;
-    max-width: 60px;
-    max-height: 60px;
     border-radius: 50%;
     background-color: #cdcdcd;
     margin: 0 auto;
 }
-.statistics__number {
-    margin-top: 300px;
+// for insert a photo 
+.statistics__photo > img { 
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+.statistics__number-2 {
     font-family: $fontLogo;
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 64px;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.56px;
     text-align: center;
-
+    color: $colorLogo;
 }
 .statistics__text {
     font-family: $fontLogo;
@@ -33,5 +39,8 @@
     font-weight: 300;
     letter-spacing: 0.32px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
+}
+.header-main__statistics1 {
+    height: 271px;
 }

@@ -1,0 +1,31 @@
+@import 'variables';
+
+.header-main__testimonials{
+    height: 330px;
+}
+
+.blockquote {
+    font-family: $fontLogo;
+    color: #4b4b4b;
+    font-size: 34px;
+    font-weight: 400;
+    text-align: center;
+    padding-top: 90px;
+    width: 69.46875%;
+    margin: 0 auto;
+}
+.cite {
+    display: block;
+    color: $colorDots;
+    font-family: $fontLogo;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 26px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    text-align: center;
+    padding-top: 40px;
+}
+.slider__navigation-margin {
+    margin-top: 25px;
+}
