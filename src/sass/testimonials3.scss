@@ -91,14 +91,42 @@
     opacity: 1;
 }
 
-.gallery {
+.carousel {
+    position: relative;
     width: 400px;
-    height: 200px;
+    padding: 10px 40px;
     background-color: grey;
-    // overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+.arrow {
+    position: absolute;
+    top: 60px;
+    padding: 0;
+    background: #ddd;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-size: 24px;
+    line-height: 24px;
+    color: #444;
+    display: block;
+}
+.gallery {
+    overflow: hidden;
 }
 .images {
     display: flex;
-    align-items: center;
+}
+.prev1 {
+    left: 16px;
+}
+.next1 {
+    left: 435px;
+}
+.gallery ul {
+    transition:  ease-in 0.7s;
+}
+.middle-servises__active {
+    list-style: none;
 }
 

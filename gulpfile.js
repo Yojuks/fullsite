@@ -13,11 +13,6 @@ gulp.task('scss', function() { // Создаем таск Sass
     .pipe(gulp.dest('build/css')) // Выгружаем результата в папку app/css
     // .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
-
-// gulp.task('javascript', function () {
-//     gulp.src('src/js/**/*.js')
-//     .pipe(gulp.dest('build/js'))
-// });
  
 gulp.task('javascript', function () {
     return gulp.src(['./src/js/sliderHeader.js', './src/js/sliderHeader2.js', './src/js/video.js', './src/js/sliderHeader3.js', './src/js/validateInput.js', './src/js/sliderServise1.js', './src/js/sliderTeam2.js', './src/js/counterExperience1.js', './src/js/counterExperience2.js'])

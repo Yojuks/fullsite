@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../slick-1.8.1/slick/slick.css"/>
+   <!--  // Add the new slick-theme.css if you want the default styling -->
+    <link rel="stylesheet" type="text/css" href="../slick-1.8.1/slick/slick-theme.css"/>
     <link rel="stylesheet" href="../build/css/main.css" type="text/css">
     <link rel="stylesheet" href="normalize.css">
+
     <title>fullsite</title>
 </head>
 <body>
@@ -23,7 +27,7 @@
             <div class="wrapper__menu clearfix">
                 <ul class="wrapper__item">
                     <li class="wrapper__list">
-                        <a class="link" href="">HOME</a>
+                        <a class="link" name='home' href="#">HOME</a>
                     </li>
                     <li class="wrapper__list">
                         <a class="link" href="#">ABOUT</a>
@@ -44,12 +48,13 @@
             </div>
         </div>
         <div class="slider">
-            <div class="slider__text" id="slider" data-pos="0"> 
-                <div class="slider-item slider-item__active" data-pos="0">
+            <div class="slider__text single-item" id="slider" data-pos="0"> 
+                
+                <div class="slider-item slider-item__active " data-pos="0">
                     <p class="slider-item__text slider-header">Slide #1 Fusce dapibus tellus ac cursus commodo. 
                             Duis mollis est non commodo luctus, nisi erat porttitor.</p> 
                 </div>
-                <div class="slider-item" data-pos="1">
+                <div class="slider-item " data-pos="1">
                     <p class="slider-item__text slider-header">Slide #2 Fusce dapibus tellus ac cursus commodo. 
                             Duis mollis est non commodo luctus, nisi erat porttitor.</p> 
                 </div>
@@ -70,15 +75,18 @@
                             Duis mollis est non commodo luctus, nisi erat porttitor.</p> 
                 </div>
             </div>
-            <div class="slider__arrows">
+            <!-- <div class="slider__arrows">
                 <div class="back">
                     <a href="#" class="back__link">&#60;</a>
                 </div>
                 <div class="next">
                     <a href="#" class="next__link">&#62;</a>
                 </div>
-            </div>
-            <div class="slider__navigation ">
+            </div> -->
+
+            <!-- OLD Changes before jquery slick -->
+
+            <!-- <div class="slider__navigation ">
                 <ul class="slider__item">
                     <li class="slider__list slider__list-active" data-pos="0"></li>
                     <li class="slider__list" data-pos="1"></li>
@@ -87,7 +95,7 @@
                     <li class="slider__list" data-pos="4"></li>
                     <li class="slider__list" data-pos="5"></li>
                 </ul>
-            </div>
+            </div> -->
          </div>
     </div>
 
@@ -104,7 +112,7 @@
                 
                 <ul class="wrapper__item wrapper__item--column">
                     <li class="wrapper__list wrapper__list--column">
-                        <a class="link link--color" href="">HOME</a>
+                        <a class="link link--color" href="#home">HOME</a>
                     </li>
                     <li class="wrapper__list wrapper__list--column">
                         <a class="link link--color" href="#">ABOUT</a>
@@ -150,7 +158,7 @@
             </div>
 
             <div class="slider">
-                    <div class="slider__text2 id="slider" data-pos="0"> 
+                    <div class="slider__text2" id="slider" data-pos="0"> 
                         <div class="slider-item1  slider-item__active" data-pos="0">
                             <p class="slider-item__text slider-header slider-header__width slider-item__text--size">Slide #1 Lorem ipsum dolor sit amet, consectetur adipisicing</p> 
                         </div>
@@ -353,22 +361,21 @@
                 <div class="switch__item">
                     <div class="switch__radio">
                         <input type="radio" class="radio" id="radio1" name="radio"/>
-                        <label for="radio1" class="radio-label">А я переключаю радиокнопку</label>
+                        <label for="radio1" class="radio-label">Quisque volutpat mattis eros.</label>
                     </div>
                     <div class="switch__radio"> 
                         <input type="radio" class="radio" id="radio2" name="radio"/>
-                        <label for="radio2" class="radio-label">А я переключаю радиокнопку</label>
+                        <label for="radio2" class="radio-label">Nullam malesuada erat ut turpis</label>
                     </div>
                     <div class="switch__radio">
                         <input type="radio" class="radio" id="radio3" name="radio"/>
-                        <label for="radio3" class="radio-label">А я переключаю радиокнопку</label>
+                        <label for="radio3" class="radio-label">Suspendisse urna nibh</label>
                     </div>
-                    <div class="switch__radio"></div>
-                        <input class="switch__input switch__input-background" type="button" value="Button">
-                    </div>
+                    <input class="switch__input switch__input-background" type="button" value="BIG BUTTON">
                 </div>
             </div>
         </div>
+    </div>
     <div class="title-block">
         <h3 class="title">Servises</h3>
     </div>
@@ -388,7 +395,8 @@
                         <p class="middle-servises__title-p">Branding</p>
                     </div>
                     <div class="middle-servises__midtext">
-                        <p class="middle-servises__middle-p">Sed ut perspiciatis unde omnis iste natus error sit voluptatem  </p>
+                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, 
+                            consectetuer adipiscing elit, sed diam nonummy nibh. </p>
                     </div>
                 </div>
                 <div class="middle-servises__item">
@@ -397,7 +405,7 @@
                         <p class="middle-servises__title-p">Design</p>
                     </div>
                     <div class="middle-servises__midtext">
-                        <p class="middle-servises__middle-p">Sed ut perspiciatis unde omnis iste natus error sit voluptatem  </p>
+                        <p class="middle-servises__middle-p">Sed ut perspiciatis unde omnis iste natus error sit voluptatem   </p>
                     </div>
                 </div>
                 <div class="middle-servises__item">
@@ -406,7 +414,7 @@
                         <p class="middle-servises__title-p">Development</p>
                     </div>
                     <div class="middle-servises__midtext">
-                        <p class="middle-servises__middle-p">Sed ut perspiciatis unde omnis iste natus error sit voluptatem  </p>
+                        <p class="middle-servises__middle-p">At vero eos et accusamus et iusto odio dignissimos qui blanditiis praesentium. </p>
                     </div>
                 </div>
             </div>
@@ -545,82 +553,151 @@
                     <p class="middle-text__item slider-header middle-text__feature1 middle-text__servises1">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. 
                             Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
                 </div>
-                <div class="middle-servises">
-                    <div class="middle-servises__active active">
-                        <div class="middle-servises__item">
-                            <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
-                            <div class="middle-servises__text">
-                                <p class="middle-servises__title-p">ANNE HATHAWAY</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
-                            </div>
-                            <div class="middle-servises__midtext middle-servises__height">
-                                <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                            </div>
-                        </div>
-                        <div class="middle-servises__item">
-                            <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
-                            <div class="middle-servises__text">
-                                <p class="middle-servises__title-p">ANNE HATHAWAY</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p middle-servises__height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>                            </div>
-                            </div>
-                        <div class="middle-servises__item">
-                            <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
-                            <div class="middle-servises__text">
-                                <p class="middle-servises__title-p">ANNE HATHAWAY</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p middle-servises__height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                            </div>
-                        </div>
-                        <div class="middle-servises__item">
-                            <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
-                            <div class="middle-servises__text">
-                                <p class="middle-servises__title-p">ANNE HATHAWAY</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
-                            </div>
-                            <div class="middle-servises__midtext middle-servises__height">
-                                <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                            </div>
-                        </div>
-                        <div class="middle-servises__item">
-                            <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
-                            <div class="middle-servises__text">
-                                <p class="middle-servises__title-p">ANNE HATHAWAY</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p middle-servises__height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>                            </div>
-                            </div>
-                        <div class="middle-servises__item">
-                            <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
-                            <div class="middle-servises__text">
-                                <p class="middle-servises__title-p">ANNE HATHAWAY</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
-                            </div>
-                            <div class="middle-servises__midtext">
-                                <p class="middle-servises__middle-p middle-servises__height">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
-                            </div>
-                        </div>
-                        
-                            
+                <div class="middle-servises__wrapper" id="corousel1">
+                    <div class="gallery">
+                        <ul class="middle-servises__active">
+                            <li> 
+                                <div class="middle-servises__item">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> 
+                                <div class="middle-servises__item ">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> 
+                                <div class="middle-servises__item ">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> 
+                                <div class="middle-servises__item ">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> 
+                                <div class="middle-servises__item ">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> 
+                                <div class="middle-servises__item ">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> 
+                                <div class="middle-servises__item ">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> 
+                                <div class="middle-servises__item ">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> 
+                                <div class="middle-servises__item ">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li> 
+                                <div class="middle-servises__item ">
+                                    <img class="middle-servises__img" src="../img/Mugshot.png" alt="" srcset="">
+                                    <div class="middle-servises__text">
+                                        <p class="middle-servises__title-p">ANNE HATHAWAY</p>
+                                    </div>
+                                    <div class="middle-servises__midtext">
+                                        <p class="middle-servises__middle-p">CEO / Marketing Guru</p>
+                                    </div>
+                                    <div class="middle-servises__midtext middle-servises__height">
+                                        <p class="middle-servises__middle-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-
                 </div>
                 <div class="arrows">
                     <img class="slide-image__item slide-image__left" src="../img/Arrow_L.png" alt="" id="image-prev">
@@ -965,7 +1042,7 @@
             </div>
            
             <div id="carousel" class="carousel">
-                <button class="arrow prev">⇦</button>
+                <button class="arrow prev1">⇦</button>
                 <div class="gallery">
                   <ul class="images">
                     <li><img src="https://js.cx/carousel/1.png"></li>
@@ -980,7 +1057,7 @@
                     <li><img src="https://js.cx/carousel/10.png"></li>
                   </ul>
                 </div>
-                <button class="arrow next next1">⇨</button>
+                <button class="arrow next1">⇨</button>
               </div>
 
              <div class="block-for-input">
@@ -1006,7 +1083,16 @@
     <!-- </div> -->
 
 <!-- </div> -->
+
+
+    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../slick-1.8.1/slick/slick.js"></script>
+
     <script src="../build/js/all.js"></script>
 </body>
 </html>

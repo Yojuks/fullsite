@@ -1,7 +1,7 @@
 @import 'variables';
 
 .header-main__servises1 {
-    height: 686px;
+    height: 786px;
     background-color: #ffffff;
 }
 .title-text__servises1 {
@@ -15,7 +15,6 @@
 }
 .middle-servises {
     display: flex;
-    justify-content: center;
     width: 60.9375%;
     margin: 0 auto;
     position: relative;
@@ -26,27 +25,26 @@
 .middle-servises__item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 25%;
 }
 .middle-servises__img {
     display: block;
     width: 180px;
     height: 180px;
+    margin: 0 0 50px 0;
 }
 .middle-servises__title-p {
     font-family: "Titillium Web";
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
+    margin: 0 0 25px 0;
 }
 .middle-servises__middle-p {
     font-family: "Titillium Web";
     font-size: 16px;
     font-weight: 300;
 }
-
 .middle-servises__wrap {
     display: flex;
     position: absolute;
@@ -54,7 +52,9 @@
     transition: all 0.5s ease-in 0.2s;
     justify-content: space-between;
 }
-
+.middle-servises__item:not(:last-child) {
+    padding: 0 115px 0 0;
+}
 .arrows {
     position: relative;
     height: 10%;

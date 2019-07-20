@@ -6,6 +6,21 @@
 .middle-servises-wrap {
     display: flex;
 }
-.middle-servises__wrap {
-
+.middle-servises__wrapper {
+    width: 60.9375%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
 }
+// .middle-servises__item {
+//     padding: 0 115px 0 0;
+// }
+.middle-servises__active {
+    position: absolute;
+}
+.middle-servises__active  li{
+    margin-right: 120px; // коли ставлю проценти то з'являються проблеми
+}
+// li:not(:last-child)

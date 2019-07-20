@@ -48,7 +48,7 @@ var kid = document.getElementsByClassName('slider-item');
             for (var i = 0; i < kids.length; i++) {
                 if (kids[i].classList.contains('slider-item__active')) {
                     return kids[i];
-                } 
+                }
             }
         }
         var activeElement = elementIsActive();

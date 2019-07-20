@@ -1,4 +1,3 @@
-
      // Slider on header2
 
     $('.menu-short').on('click', function(e) {
@@ -13,15 +12,15 @@
         $('.header-main__wrapper--float').toggleClass('activeMenu');
     });
         
-    //    for header1
+    //  for header1
         var selectedLi2;
-        var allDot2 = document.getElementsByTagName('ul')[3];
+        var allDot2 = document.getElementsByTagName('ul')[2];
+
         var index1 = 1;
 
         var callback1 = function(index1) {
             return function(event) {
               
-            
               var target = event.target;
               if (target.tagName != "LI") {return};
 

@@ -1,0 +1,26 @@
+.next-slick {
+    top: 75%;
+    left: 50%;
+}
+.prev-slick {
+    top: 75%;
+    left: 48%;
+}
+.next-slick:before,
+.prev-slick:before {
+    font-family: none;
+    color: black;
+}
+.next-slick:before {
+    content: '>';
+    font-weight: bold;
+}
+.prev-slick:before {
+    content: '<';
+    font-weight: bold;
+}
+
+.slick-dots-new li button:before {
+    font-size: 15px;
+    top: 800%;
+}
