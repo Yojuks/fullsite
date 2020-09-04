@@ -19,7 +19,7 @@
     "gulp-uglify": "^3.0.1",
     "gulp-uglifyjs": "^0.6.2",
     "gulp-watch": "^5.0.1",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.13.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
